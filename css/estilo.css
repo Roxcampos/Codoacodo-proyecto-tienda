@@ -1,6 +1,57 @@
 *{
-    font-family: "Montserrat";
+    font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
-    font-weight:normal;
-    font-style:normal;
+    font-weight: normal;
+    font-style: normal;
 }
+
+.productos{
+    width: 940px;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+.imagen{
+        width: 200px;
+        height: 280px;
+}
+
+.productos li{
+    display: inline-block;
+    text-align: center;
+    width: 30%;
+    vertical-align: top;
+    margin: 0 1.5%;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    border: 2px solid #000000;
+    border-radius: 10px;
+}
+
+.productos li:hover{
+    border-color:#c78c19;
+}
+
+.productos li:active{
+    border-color:#088c19;
+}
+
+.productos h2{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.productos li:hover h2{
+    font-size: 33px;
+}
+
+.producto-descripcion{
+    font-size: 18px;
+}
+
+.producto-precio{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top:10px;
+}
+
