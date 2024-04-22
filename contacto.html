@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Contacto - Tiena KappaCode</title>
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/estilo.css">
+    </head>
+    <body>
+        <header>
+            <div class="caja">
+                <nav>
+                    <div id="encabezado" class="encabezado">
+                        <ul>
+                        <li><a href="">consultas@hotmail.com</a></li>
+                        <li><a href="./registro.html">Crear cuenta</a></li>
+                        <li><a href="./login.html" ">inicio de sesión</a></li>
+                        </ul>
+                    </div>
+                   
+                    <div id=" menu" class="menu">
+                        <h1><img href="index.html"><img src="./img/logoKappaCode.png" alt="Inicio"></h1>
+                        <ul>
+                            <li><a href="index.html">INICIO</a></li>
+                            <li><a href="productos.html">PRODUCTOS</a></li>
+                            <li><a href="contacto.html">CONTACTO</a></li>
+                        </ul>
+                    </div>               
+                </nav>
+            </div>
+        
+        </header>
+        <main>
+            <form>
+                <label for="nombreapellido">Nombre y Apellido</label>
+                <input type="text" id="nombreapellido" class="input-padron" required>
+
+                <label for="correoelectronico">Correo Electrónico</label>
+                <input type="email" id="correoelectronico" class="input-padron" required placeholder="email@dominio.com">
+
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" class="input-padron" required placeholder="(XX) XXXX XXXX">
+
+                <label for="mensaje">Mensaje</label>
+                <textarea cols="70" rows="10" id="mensaje" class="input-padron" required></textarea>
+                
+                <fieldset>
+                    <legend>¿Cómo le gustaría que lo contactemos?</legend>
+
+                    <label for="radio-email"><input type="radio" name="contacto" value="email" id="radio-email">Email</label>
+                    
+                    <label for="radio-telefono"><input type="radio" name="contacto" value="telefono" id="radio-telefono">Teléfono</label>
+                    
+                    <label for="radio-whatsapp"><input type="radio" name="contacto" value="whatsapp" id="radio-whatsapp" checked>WhatsApp</label>
+                    
+                </fieldset>
+               
+                <fieldset>
+                    <legend>¿En cuál horario puede ser contactado?</legend>
+                    <select>
+                        <option>Mañana</option>
+                        <option>Tarde</option>
+                        <option>Noche</option>
+                    </select>
+                </fieldset>
+                
+                <label class="checkbox"><input type="checkbox" checked>¿Le gustaría recibir novedades de Tienda KappaCode?</label>                
+                
+                <input type="submit" value="Enviar formulario" class="enviar">
+
+            </form>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Día</th>
+                        <th>Horario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Lunes a Viernes</td>
+                        <td>09h ~ 20h</td>
+                    </tr>
+                    <tr>
+                        <td>Sábados</td>
+                        <td>08h ~ 12h</td>
+                    </tr>
+                    <tr>
+                        <td>Domingos y Feriados</td>
+                        <td>Cerrado</td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+        <footer>
+            <img src="img/logoKappaCode.png"  alt="Logo de Tienda KappaCode">
+            <p class="copyright">&copy Copyright Tienda KappaCode - 2024</p>
+        </footer>
+    </body>
+</html>

@@ -4,6 +4,43 @@
     font-weight: normal;
     font-style: normal;
 }
+header {
+    background-color: #ecdba9;
+    padding: 2px 0;
+}
+
+nav {
+    display: inline;
+    margin: 0 0 0 5px;
+}
+
+nav li{
+    display: inline;
+    margin: 10px 10px 10px 15px;
+    align-items: right;
+}
+
+.encabezado a:hover{
+    color: #c78c19;
+    text-decoration: underline;
+}
+.menu {
+    text-transform: uppercase;
+    color: #000000;
+    font-weight: bold;
+    font-size: 22px;
+    text-decoration: none;
+    text-align: right;
+}
+.menu h1{
+    margin-top: 1.5%;
+    text-align: left;
+}
+
+.menu a:hover{
+    color: #c78c19;
+    text-decoration: underline;
+}
 
 .productos{
     width: 940px;
@@ -12,8 +49,8 @@
 }
 
 .imagen{
-        width: 200px;
-        height: 280px;
+    width: 200px;
+    height: 280px;
 }
 
 .productos li{
@@ -55,3 +92,70 @@
     margin-top:10px;
 }
 
+footer{
+    text-align: center;
+    background: url(imagenes/bg.jpg);
+    padding:40px;
+}
+
+.copyright{
+    color:#ea1717;
+    font-size: 13px;
+    margin:20px;
+}
+
+/*FORMULARIO CONTACTO*/
+
+form{
+    margin: 40px 10px;
+}
+
+form label, form legend{
+    display: block;
+    font-size: 20px;
+    margin: 0 0 10px;
+}
+
+.input-padron{
+    display: block;
+    margin: 0 0 20px;
+    padding: 10px 25px;
+    width: 50%;
+}
+
+.checkbox{
+    margin:20px 0;
+}
+
+.enviar{
+    width: 40%;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color:white;
+    background: orange;
+    border:none;
+    border-radius: 5px;
+    transition: 1s all;
+    cursor:pointer;
+}
+
+.enviar:hover{
+    background: darkorange;
+    transform: scale(1.2);
+}
+
+table{
+    margin: 40px 40px;
+}
+
+thead{
+    background: #555555;
+    color:white;
+    font-weight: bold;
+}
+
+td,th{
+    border: 1px solid #000000;
+    padding: 8px 15px;
+}
