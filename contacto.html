@@ -7,49 +7,40 @@
     <title>Contacto - Tiena KappaCode</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/estilo.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
 </head>
 
-<body>  
+<body>
     <header>
-    <div class="caja row">
-        <nav>
-            <div>
-                <div class="  izquierda col-3 col-s-3">
-                    <a href="">consultas@hotmail.com</a>
+        <div class="caja row">
+            <nav>
+                <div class="encabezado">
+                    <div class="consulta izquierda col-3">
+                        <a href="">consultas@hotmail.com</a>
+                    </div>
+                    <div class="sesion derecha col-9">
+                        <a href="./registro.html">Crear cuenta | </a>
+                        <a href="./login.html" "> Login</a>
+                    </div>
                 </div>
-                <div class=" derecha col-9 col-s-9">
-                    <ul>
-                    <li><a href="./registro.html">Crear cuenta</a></li>                    
-                    <li><a href="./login.html" ">inicio de sesión</a> </li>
-                    </ul>
-                
-                </div>
-                    
-            </div>
-               
-            <div  class=" izquierda  col-2 col-s-6">
-                        <a><img href="index.html"><img src="./img/logoKappaCode.png" alt="Inicio">
-                        </a>
-                </div>
-                <div class="menu derecha col-10 col-s-6">
-                    <ul>
-                        <br><br><br><br>
-                        <br>
+                   
+                <div  class="logo izquierda  col-2 col-s-6">
+                            <a><img href="index.html"><img src="./img/logoKappaCode.png" alt="Inicio">
+                            </a>
+                    </div>
+                    <div class="menu derecha col-10 col-s-6">
+                        <ul>
+                            <br><br><br><br>
+                            <br>
 
-                        <li><a href="index.html">INICIO</a></li>
-                        <li><a href="productos.html">PRODUCTOS</a></li>
-                        <li><a href="contacto.html">CONTACTO</a></li>
-                    </ul>
-                </div>
-        </nav>
-    </div>
-
-
-</header>
+                            <li><a href="index.html">INICIO |</a></li>
+                            <li><a href="productos.html">PRODUCTOS |</a></li>
+                            <li><a href="contacto.html">CONTACTO |</a></li>
+                        </ul>
+                    </div>
+            </nav>
+        </div>
+    </header>
     <main>
         <form>
             <label for="nombreapellido">Nombre y Apellido</label>
@@ -118,7 +109,18 @@
         </table>
     </main>
     <footer>
-        <img src="img/logoKappaCode.png" alt="Logo de Tienda KappaCode">
+        <div class="redes-sociales">
+            <a href="https://www.facebook.com/?locale=es_LA" rel="">
+                <img src="img/logoFacebook.png" alt="Logo Facebook" class="facebook">
+            </a>
+            <a href="https://www.instagram.com/" rel="">
+                <img src="img/logoInstagram.png" alt="Logo Instagram" class="instagram">
+            </a>
+            <a href="https://twitter.com/home?lang=es" rel="">
+                <img src="img/logoTwitter.png" alt="Logo Twitter" class="twitter">
+            </a>
+        </div>
+        <img src="img/logoKappaCode.png" alt="Logo de Tienda KappaCode" class="logo-footer">
         <p class="copyright">&copy Copyright Tienda KappaCode - 2024</p>
     </footer>
 </body>
