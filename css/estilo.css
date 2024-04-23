@@ -27,6 +27,7 @@ nav li{
     margin: 0px 0px 0px 15px;
     align-items: right;
 }
+
 .encabezado a:hover{
     color: #c78c19;
     text-decoration: underline;
@@ -40,6 +41,7 @@ nav li{
     text-align: right;
     
 }
+
 .logo img{
     width: 195px;
 }
@@ -62,8 +64,45 @@ nav li{
 .menu a:hover{
     color: #c78c19;
     text-decoration: underline;
+    font-weight: bold;
+    font-size: 18px;
+}
+.nav > li {
+  float:left;
+  text-align: right;
 }
 
+.nav li a {
+  color:#897e40;
+  text-decoration:none;
+  padding:10px 12px;
+  display:block;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.nav li a:hover {
+  background-color:#434343;
+}
+
+.nav li ul {
+  display:none;
+  position:absolute;
+  min-width:140px;
+}
+
+.nav li:hover > ul {
+  display:block;
+}
+
+.nav li ul li {
+  position:relative;
+}
+
+.nav li ul li ul {
+  right:-140px;
+  top:0px;
+}
 .productos{
     width: 940px;
     margin: 0 auto;
