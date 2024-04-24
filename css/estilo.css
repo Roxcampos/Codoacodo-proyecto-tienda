@@ -238,6 +238,9 @@ td,th{
     align-items: center;
     justify-content: center;
   }
+  li{
+    text-align: left;
+  }
 
   .container h1{
     text-align: center;

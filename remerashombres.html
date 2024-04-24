@@ -4,57 +4,31 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Pantalones Hombre- Tiena KappaCode</title>
+    <title>Rremeras Hombre - Tiena KappaCode</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/estilo.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
-    <header>
-        <div class="caja row">
-           
-            <div class="encabezado">
-                <div class="consulta izquierda col-3">
-                    <a href="">consultas@hotmail.com</a>
-                </div>
-                <div class="sesion derecha col-9">
-                    <a href="./registro.html">Crear cuenta | </a>
-                    <a href="./login.html"> Login</a>
-                </div>
-            </div>
-            <nav>
-            <div  class="logo izquierda  col-2 col-s-6">
-                        <a><img href="index.html"><img src="./img/logoKappaCode.png" alt="Inicio">
-                        </a>
-                </div>
-                <div class="menu derecha col-10 col-s-6">
-                    <ul class="nav">
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="#click">Productos</a>
-                           <ul>
-                             <li><a href="#click">Hombre</a>
-                            <ul>
-                            <li><a href="remerashombres.html">Remeras</a></li>
-                            <li><a href="pantaloneshombres.html">Pantalones</a></li>
-                            
-                        </ul>
-                        </li>
-                    <li><a href="#click">Mujer</a>
-                        <ul>
-                            <li><a href="remerasmujeres.html">Remeras</a></li>
-                            <li><a href="pantalonesmujeres.html">Pantalones</a></li>
-                            
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li><a href="contacto.html">Contacto</a></li>
-                    </ul>
-                </div>
-        </nav>
-    </div>
-    </header>
+      <!-- llamo al header -->
+      <script>
+        $(function(){
+            $("#header").load("header.html");
+        });
+    </script>
+    <!-- sin este div por alguna razon no se visualiza, supongo que hace que se muestre y por eso el #header de la funsion anterior -->
+   <div id="header"></div>
+<!-- Claro, desglosemos paso a paso lo que hace ese código:
+
+1- <script>: Esta etiqueta HTML se utiliza para incluir código JavaScript en la página.
+2- $(function(){ ... }): Esto es una abreviatura de $(document).ready(function(){ ... }). Es una función de jQuery que se ejecuta cuando el documento HTML está completamente cargado y listo para manipularse.
+3- $("#header").load("header.html");:
+   · $("#header"): Esto selecciona el elemento con el id "header". Es decir, busca un elemento en el HTML con el atributo id igual a "header".
+   · .load("header.html"): Este método de jQuery carga el contenido de un archivo HTML (en este caso, "header.html") y lo inserta dentro del elemento seleccionado. En este caso, insertará el contenido de "header.html" dentro del elemento con el id "header".
+4- <div id="header"></div>: Este es el contenedor en el HTML donde se cargará el contenido del encabezado. Es un div con el id "header". -->
+<!-- main mostramos tarjetas de productos -->
     
     <main>
         
