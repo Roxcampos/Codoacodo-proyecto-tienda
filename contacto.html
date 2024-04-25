@@ -12,7 +12,7 @@
 </head>
 
 <body>
-       <!-- llamo al header -->
+    <header><!-- llamo al header -->
        <script>
         $(function(){
             $("#header").load("header.html");
@@ -29,6 +29,8 @@
    · .load("header.html"): Este método de jQuery carga el contenido de un archivo HTML (en este caso, "header.html") y lo inserta dentro del elemento seleccionado. En este caso, insertará el contenido de "header.html" dentro del elemento con el id "header".
 4- <div id="header"></div>: Este es el contenedor en el HTML donde se cargará el contenido del encabezado. Es un div con el id "header". -->
 <!-- main mostramos tarjetas de productos -->
+</header>   
+    
     <main>
         <form>
             <label for="nombreapellido">Nombre y Apellido</label>
@@ -96,7 +98,7 @@
             </tbody>
         </table>
     </main>
-        <!-- llamo al footer -->
+     <footer>   <!-- llamo al footer -->
         <script>
             $(function(){
                 $("#footer").load("footer.html");
@@ -104,6 +106,7 @@
         </script>
         <!-- sin este div por alguna razon no se visualiza, supongo que hace que se muestre y por eso el #header de la funsion anterior -->
        <div id="footer"></div>
+    </footer>
 </body>
 
 </html>
