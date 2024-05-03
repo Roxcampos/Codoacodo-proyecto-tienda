@@ -37,6 +37,9 @@ nav li{
     font-size: 22px;
     text-decoration: none;
     text-align: right;
+    position: relative;
+    display: inline-block;
+    z-index: 1; /* Ajusta el z-index para que esté por debajo del contenido del main */
     
 }
 
@@ -125,11 +128,6 @@ nav li{
   display: block;
 }
 
-.menu {
-  position: relative;
-  display: inline-block;
-  z-index: 1; /* Ajusta el z-index para que esté por debajo del contenido del main */
-}
 
 .clase-principal{
   width: 100%;
@@ -298,7 +296,7 @@ td,th{
     padding: 8px 15px;
 }
 .mapa-tienda{
-  width: 40%; /* Ocupa el 40% del ancho total */
+  width: 80%; /* Ocupa el 40% del ancho total */
   padding: 20px; /* Espaciado interno */
 }
 /* Estilos adicionales */
