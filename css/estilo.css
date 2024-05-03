@@ -234,7 +234,14 @@ footer{
 
 
 /*FORMULARIO CONTACTO*/
-
+.caja-contacto{
+  display: flex;
+  justify-content: space-between;
+}
+.form-contacto{
+  width: 80%; /* Ocupa el 40% del ancho total */
+  padding: 20px; /* Espaciado interno */
+}
 form{
     margin: 40px 10px;
 }
@@ -258,7 +265,7 @@ form label, form legend{
 }
 
 .enviar{
-    width: 40%;
+    width: 30%;
     padding: 15px 0;
     font-size: 18px;
     font-weight: bold;
@@ -268,6 +275,7 @@ form label, form legend{
     border-radius: 5px;
     transition: 1s all;
     cursor:pointer;
+    text-align:center;
 }
 
 .enviar:hover{
@@ -288,6 +296,24 @@ thead{
 td,th{
     border: 1px solid #000000;
     padding: 8px 15px;
+}
+.mapa-tienda{
+  width: 40%; /* Ocupa el 40% del ancho total */
+  padding: 20px; /* Espaciado interno */
+}
+/* Estilos adicionales */
+.titulo-principal {
+  margin-top: 0; /* Elimina el margen superior del título */
+  text-align: center;
+}
+
+.mapa-contenido {
+  margin-top: 20px; /* Espaciado superior para separar el mapa del texto */
+}
+
+.mapa-contenido iframe {
+  width: 100%; /* El mapa ocupa el 100% del contenedor */
+  height: 300px; /* Altura fija */
 }
   /*Registro*/
   .container{
