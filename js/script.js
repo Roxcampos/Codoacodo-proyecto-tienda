@@ -17,3 +17,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 */
+fetch(`productos.json`) 
+    .then(response => response.json()) 
+    .then(data => {console.log(data)
+        let cad=`
+        <li>
+        <img class="imagen" src="${data.imagen}">
+        <p class="producto-descripcion">${data.nombre}</p>
+        <p class="producto-precio">$ ${data.precio}</p>
+        </li>
+        
+        `
+        
+
+        document.querySelector("#productos").innerHTML=cad
+    }
+
+);
+console.log("hola")

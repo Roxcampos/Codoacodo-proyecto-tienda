@@ -240,7 +240,9 @@ div#slider figure {
 }
 
 .producto-descripcion{
-    font-size: 18px;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top:10px;
 }
 
 .producto-precio{
