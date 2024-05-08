@@ -2,58 +2,65 @@
     "productos":[
     {
         "id": 0,
-        "imagen":"https://github.com/Roxcampos/Codoacodo-proyecto-tienda/blob/master/img/pantalon%20hombre/pantalon1.webp",
+        "imagen":"https://kappacode.netlify.app/img/pantalon%20hombre/pantalon1.webp",
         "nombre":"pantalon P jean cargo",
         "genero":"hombre",
-        "precio": 60000
+        "precio": 60000,
+        "categoria":"pantalon"
 
     },
     {
         "id": 1,
-        "imagen":"https://github.com/Roxcampos/Codoacodo-proyecto-tienda/blob/master/img/pantalon%20hombre/pantalon2.webp",
+        "imagen":"https://kappacode.netlify.app/img/pantalon%20hombre/pantalon2.webp",
         "nombre":"pantalon jean cargo negro",
         "genero":"hombre",
-        "precio": 68000
+        "precio": 68000,
+        "categoria":"pantalon"
 
     },
     {
         "id": 2,
-        "imagen":"https://github.com/Roxcampos/Codoacodo-proyecto-tienda/blob/master/img/pantalon%20hombre/pantalon3.webp",
+        "imagen":"https://kappacode.netlify.app/img/pantalon%20hombre/pantalon3.webp",
         "nombre":"pantalon jean cargo marrón",
         "genero":"hombre",
-        "precio": 62000
+        "precio": 62000,
+        "categoria":"pantalon"
 
     },
     {
         "id": 3,
-        "imagen":"https://github.com/Roxcampos/Codoacodo-proyecto-tienda/blob/master/img/pantalon%20hombre/pantalon4.webp",
+        "imagen":"https://kappacode.netlify.app/img/pantalon%20hombre/pantalon4.webp",
         "nombre":"pantalon jean azul",
         "genero":"hombre",
-        "precio": 65000
+        "precio": 65000,
+        "categoria":"pantalon"
 
     },
     {
         "id": 4,
-        "imagen":"https://github.com/Roxcampos/Codoacodo-proyecto-tienda/blob/master/img/pantalon%20hombre/pantalon5.webp",
+        "imagen":"https://kappacode.netlify.app/img/pantalon%20hombre/pantalon5.webp",
         "nombre":"pantalon jean celeste",
         "genero":"hombre",
-        "precio": 64000
+        "precio": 64000,
+        "categoria":"pantalon"
 
     },
     {
         "id": 5,
-        "imagen":"https://github.com/Roxcampos/Codoacodo-proyecto-tienda/blob/master/img/pantalon%20hombre/pantalon6.webp",
+        "imagen":"https://kappacode.netlify.app/img/pantalon%20hombre/pantalon6.webp",
         "nombre":"pantalon jean negro",
         "genero":"hombre",
-        "precio": 74000
+        "precio": 74000,
+        "categoria":"pantalon"
 
     },
     {
         "id": 6,
-        "imagen":"https://github.com/Roxcampos/Codoacodo-proyecto-tienda/blob/master/img/pantalon%20hombre/pantalon7.webp",
+        "imagen":"https://kappacode.netlify.app/img/pantalon%20hombre/pantalon7.webp",
         "nombre":"pantalon jean negro",
         "genero":"hombre",
-        "precio": 61000
+        "precio": 61000,
+        "categoria":"pantalon"
 
     }
 ]
