@@ -3,7 +3,7 @@
     {
         "id": 0,
         "imagen":"https://kappacode.netlify.app/img/pantalon%20hombre/pantalon1.webp",
-        "nombre":"pantalon P jean cargo",
+        "nombre":"pantalon jean cargo",
         "genero":"hombre",
         "precio": 60000,
         "categoria":"pantalon"
