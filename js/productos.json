@@ -2,7 +2,7 @@
     "productos":[
     {
         "id": 0,
-        "imagen":"https://kappacode.netlify.app/img/pantalon%20hombre/pantalon1.webp",
+        "imagen":"../img/pantalon%20hombre/pantalon1.webp",
         "nombre":"pantalon P jean cargo",
         "genero":"hombre",
         "precio": 60000,
@@ -11,7 +11,7 @@
     },
     {
         "id": 1,
-        "imagen":"https://kappacode.netlify.app/img/pantalon%20hombre/pantalon2.webp",
+        "imagen":"../img/pantalon%20hombre/pantalon2.webp",
         "nombre":"pantalon jean cargo negro",
         "genero":"hombre",
         "precio": 68000,
@@ -20,7 +20,7 @@
     },
     {
         "id": 2,
-        "imagen":"https://kappacode.netlify.app/img/pantalon%20hombre/pantalon3.webp",
+        "imagen":"../img/pantalon%20hombre/pantalon3.webp",
         "nombre":"pantalon jean cargo marrón",
         "genero":"hombre",
         "precio": 62000,
@@ -29,7 +29,7 @@
     },
     {
         "id": 3,
-        "imagen":"https://kappacode.netlify.app/img/pantalon%20hombre/pantalon4.webp",
+        "imagen":"../img/pantalon%20hombre/pantalon4.webp",
         "nombre":"pantalon jean azul",
         "genero":"hombre",
         "precio": 65000,
@@ -38,7 +38,7 @@
     },
     {
         "id": 4,
-        "imagen":"https://kappacode.netlify.app/img/pantalon%20hombre/pantalon5.webp",
+        "imagen":"../img/pantalon%20hombre/pantalon5.webp",
         "nombre":"pantalon jean celeste",
         "genero":"hombre",
         "precio": 64000,
@@ -47,7 +47,7 @@
     },
     {
         "id": 5,
-        "imagen":"https://kappacode.netlify.app/img/pantalon%20hombre/pantalon6.webp",
+        "imagen":"../img/pantalon%20hombre/pantalon6.webp",
         "nombre":"pantalon jean negro",
         "genero":"hombre",
         "precio": 74000,
@@ -56,11 +56,200 @@
     },
     {
         "id": 6,
-        "imagen":"https://kappacode.netlify.app/img/pantalon%20hombre/pantalon7.webp",
+        "imagen":"../img/pantalon%20hombre/pantalon7.webp",
         "nombre":"pantalon jean negro",
         "genero":"hombre",
         "precio": 61000,
         "categoria":"pantalon"
+
+    },
+    {
+        "id": 7,
+        "imagen":"../img/pantalon%20mujer/pantalon1.webp",
+        "nombre":"pantalon jean negro",
+        "genero":"mujer",
+        "precio": 65000,
+        "categoria":"pantalon"
+
+    },
+    {
+        "id": 8,
+        "imagen":"../img/pantalon%20mujer/pantalon2.webp",
+        "nombre":"pantalon jean azul",
+        "genero":"mujer",
+        "precio": 69000,
+        "categoria":"pantalon"
+
+    },
+    {
+        "id": 9,
+        "imagen":"../img/pantalon%20mujer/pantalon3.webp",
+        "nombre":"pantalon jean gris oscuro",
+        "genero":"mujer",
+        "precio": 67000,
+        "categoria":"pantalon"
+
+    },
+    {
+        "id": 10,
+        "imagen":"../img/pantalon%20mujer/pantalon4.webp",
+        "nombre":"pantalon jean azul",
+        "genero":"mujer",
+        "precio": 68000,
+        "categoria":"pantalon"
+
+    },
+    {
+        "id": 11,
+        "imagen":"../img/pantalon%20mujer/pantalon5.webp",
+        "nombre":"pantalon jean gris claro",
+        "genero":"mujer",
+        "precio": 62000,
+        "categoria":"pantalon"
+
+    },
+    {
+        "id": 12,
+        "imagen":"../img/pantalon%20mujer/pantalon6.webp",
+        "nombre":"pantalon jean negro",
+        "genero":"mujer",
+        "precio": 65000,
+        "categoria":"pantalon"
+
+    },
+    {
+        "id": 13,
+        "imagen":"../img/pantalon%20mujer/pantalon7.webp",
+        "nombre":"pantalon jean azul",
+        "genero":"mujer",
+        "precio": 66000,
+        "categoria":"pantalon"
+
+    },
+    {
+        "id": 14,
+        "imagen":"../img/remeras%20mujer/remera1.webp",
+        "nombre":"remera algodon verde",
+        "genero":"mujer",
+        "precio": 65000,
+        "categoria":"remera"
+
+    },
+    {
+        "id": 15,
+        "imagen":"../img/remeras%20mujer/remera2.webp",
+        "nombre":"remera algodon negra",
+        "genero":"mujer",
+        "precio": 65000,
+        "categoria":"remera"
+
+    },
+    {
+        "id": 16,
+        "imagen":"../img/remeras%20mujer/remera3.webp",
+        "nombre":"remera algodon blanca",
+        "genero":"mujer",
+        "precio": 65000,
+        "categoria":"remera"
+
+    },
+    {
+        "id": 17,
+        "imagen":"../img/remeras%20mujer/remera4.webp",
+        "nombre":"remera blanca dibujo",
+        "genero":"mujer",
+        "precio": 65000,
+        "categoria":"remera"
+
+    },
+    {
+        "id": 18,
+        "imagen":"../img/remeras%20mujer/remera5.webp",
+        "nombre":"remera roja lisa",
+        "genero":"mujer",
+        "precio": 65000,
+        "categoria":"remera"
+
+    },
+    {
+        "id": 19,
+        "imagen":"../img/remeras%20mujer/remera6.webp",
+        "nombre":"remera brillosa gris",
+        "genero":"mujer",
+        "precio": 65000,
+        "categoria":"remera"
+
+    },
+    {
+        "id": 20,
+        "imagen":"../img/remeras%20mujer/remera7.webp",
+        "nombre":"remera deportiva",
+        "genero":"mujer",
+        "precio": 65000,
+        "categoria":"remera"
+
+    },
+    {
+        "id": 21,
+        "imagen":"../img/remeras%20hombre/remera1.webp",
+        "nombre":"remera manga larga verde",
+        "genero":"hombre",
+        "precio": 65000,
+        "categoria":"remera"
+
+    },
+    {
+        "id": 22,
+        "imagen":"../img/remeras%20hombre/remera2.webp",
+        "nombre":"remera algodon azul",
+        "genero":"hombre",
+        "precio": 65000,
+        "categoria":"remera"
+
+    },
+    {
+        "id": 23,
+        "imagen":"../img/remeras%20hombre/remera3.webp",
+        "nombre":"remera negra malvinas",
+        "genero":"hombre",
+        "precio": 65000,
+        "categoria":"remera"
+
+    },
+    {
+        "id": 24,
+        "imagen":"../img/remeras%20hombre/remera4.webp",
+        "nombre":"remera negra hercules",
+        "genero":"hombre",
+        "precio": 65000,
+        "categoria":"remera"
+
+    },
+    {
+        "id": 25,
+        "imagen":"../img/remeras%20hombre/remera5.webp",
+        "nombre":"remera lisa negra",
+        "genero":"hombre",
+        "precio": 65000,
+        "categoria":"remera"
+
+    },
+    {
+        "id": 26,
+        "imagen":"../img/remeras%20hombre/remera6.webp",
+        "nombre":"remera lisa azul",
+        "genero":"hombre",
+        "precio": 65000,
+        "categoria":"remera"
+
+    },
+    {
+        "id": 27,
+        "imagen":"../img/remeras%20hombre/remera7.webp",
+        "nombre":"remera estampada blanca",
+        "genero":"hombre",
+        "precio": 65000,
+        "categoria":"remera"
 
     }
 ]

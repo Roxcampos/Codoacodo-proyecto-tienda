@@ -32,7 +32,19 @@
         <!-- main mostramos tarjetas de productos -->
     </header>
     <main>
-        <div id="pantalon-hombre">
+        <div id="filtro" class="filtro">
+            <label for="precio">Precio: </label>
+            <input type="text" >
+            <select id="tipoPrenda">
+                <option value="remera">Remera</option>
+                <option value="Pantalon">Pantalon</option>
+            </select>
+            <select id="genero">
+                <option value="mujer">Mujer</option>
+                <option value="hombre">Hombre</option>
+              </select>
+        </div>
+        <div >
             <ul id="productos" class="productos">
             </ul>
         </div>

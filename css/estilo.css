@@ -220,6 +220,7 @@ div#slider figure {
     box-sizing: border-box;
     border: 2px solid #000000;
     border-radius: 10px;
+    min-width: 380px;
 }
 
 .productos li:hover{
@@ -283,6 +284,7 @@ footer{
 form{
     margin: 40px 10px;
 }
+
 
 form label, form legend{
     display: block;
@@ -580,4 +582,28 @@ td,th{
     float: left;
     padding: 15px;
   }
-  
+  /*filtro*/
+  .filtro{
+    display: flex;
+    padding: 5px;
+    align-items: flex-start ;
+  }
+  .filtro label{
+    font-size: 20px;
+    padding: 12px;
+    
+  }
+  .filtro input{
+    width: 200px; 
+    font-size: 20px;
+    padding: 12px;  
+    padding-left: 12px;
+    padding-right: 20px;
+  }
+  .filtro select{
+    width: 150px; 
+    margin: 15px;  
+    padding-left: 12px;
+    padding-right: 20px;
+    font-size: 20px;
+  }
