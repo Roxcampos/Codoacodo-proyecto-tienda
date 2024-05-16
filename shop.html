@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda KappaCode</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/shop.js"></script>
+</head>
+
+<body>
+   <header>
+    <!-- llamo al header -->
+    <script>
+        $(function(){
+            $("#header").load("header.html");
+        });
+    </script>
+    <!-- sin este div por alguna razon no se visualiza, supongo que hace que se muestre y por eso el #header de la funsion anterior -->
+   <div id="header"></div>
+<!-- Claro, desglosemos paso a paso lo que hace ese código:
+
+1- <script>: Esta etiqueta HTML se utiliza para incluir código JavaScript en la página.
+2- $(function(){ ... }): Esto es una abreviatura de $(document).ready(function(){ ... }). Es una función de jQuery que se ejecuta cuando el documento HTML está completamente cargado y listo para manipularse.
+3- $("#header").load("header.html");:
+   · $("#header"): Esto selecciona el elemento con el id "header". Es decir, busca un elemento en el HTML con el atributo id igual a "header".
+   · .load("header.html"): Este método de jQuery carga el contenido de un archivo HTML (en este caso, "header.html") y lo inserta dentro del elemento seleccionado. En este caso, insertará el contenido de "header.html" dentro del elemento con el id "header".
+4- <div id="header"></div>: Este es el contenedor en el HTML donde se cargará el contenido del encabezado. Es un div con el id "header". -->
+<!-- main mostramos tarjetas de productos -->
+</header>
+    <main>
+        <div class="contenedor-banner">
+            <img src="img/banner.webp">
+        </div>
+        <div id="productos">
+    <!-- Aquí se cargan los productos -->
+</div>
+
+<div class="tabla-calculo" id="tabla-calculo">
+  <table class="tabla">
+      <caption class="titulo-tabla">Productos en el carrito</caption>
+      <thead class="cabecera border-top-right">
+          <tr>
+              <th class="border-top-left">Nombre Producto</th>
+              <th>Cantidad</th>
+              <th>Precio Unitario</th>
+              <th class="border-top-right">Precio Total</th>
+          </tr>
+      </thead>
+      <tbody id="carrito-body">
+      </tbody>
+      <tfoot id="footer">
+          <tr><td class="border-bottom-left border-bottom-right" colspan="4">¡No hay ningún elemento en el carrito!</td></tr>
+      </tfoot>
+  </table>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+      const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      actualizarCarrito(carrito);
+  });
+
+  function actualizarCarrito(carrito) {
+      const carritoBody = document.querySelector("#carrito-body");
+      const footer = document.querySelector("#footer");
+
+      carritoBody.innerHTML = '';
+
+      if (carrito.length === 0) {
+          footer.innerHTML = '<tr><td class="border-bottom-left border-bottom-right" colspan="4">¡No hay ningún elemento en el carrito!</td></tr>';
+          return;
+      }
+
+      let totalCarrito = 0;
+
+      carrito.forEach(item => {
+          const precioTotal = item.precio * item.cantidad;
+          totalCarrito += precioTotal;
+
+          carritoBody.innerHTML += `
+          <tr>
+              <td>${item.nombre}</td>
+              <td>
+                  <button class="cantidad-btn" data-id="${item.id}" data-action="decrement">-</button>
+                  ${item.cantidad}
+                  <button class="cantidad-btn" data-id="${item.id}" data-action="increment">+</button>
+              </td>
+              <td>$${item.precio.toFixed(2)}</td>
+              <td>$${precioTotal.toFixed(2)}</td>
+          </tr>
+          `;
+      });
+
+      footer.innerHTML = `
+      <tr>
+          <td class="border-bottom-left" colspan="3">Total</td>
+          <td class="border-bottom-right">$${totalCarrito.toFixed(2)}</td>
+      </tr>
+      `;
+
+      document.querySelectorAll('.cantidad-btn').forEach(button => {
+          button.addEventListener('click', event => {
+              const productId = button.getAttribute('data-id');
+              const action = button.getAttribute('data-action');
+              actualizarCantidad(carrito, productId, action);
+          });
+      });
+  }
+
+  function actualizarCantidad(carrito, productId, action) {
+      const index = carrito.findIndex(p => p.id == productId);
+      if (index !== -1) {
+          if (action === 'increment') {
+              carrito[index].cantidad += 1;
+          } else if (action === 'decrement' && carrito[index].cantidad > 1) {
+              carrito[index].cantidad -= 1;
+          }
+          localStorage.setItem('carrito', JSON.stringify(carrito));
+          actualizarCarrito(carrito);
+      }
+  }
+</script></main>
+<footer>   <!-- llamo al footer -->
+    <script>
+        $(function(){
+            $("#footer").load("footer.html");
+        });
+    </script>
+    <!-- sin este div por alguna razon no se visualiza, supongo que hace que se muestre y por eso el #header de la funsion anterior -->
+   <div id="footer"></div>
+</footer>
+<script src="script.js"></script>
+</body>
+
+</html>
