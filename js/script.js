@@ -17,18 +17,18 @@ enlaces.forEach(enlace => {
         // Guarda el valor del atributo data-genero en sessionStorage
         sessionStorage.setItem('genero', genero);
         sessionStorage.setItem('categoria', categoria);
+        sessionStorage.setItem('precio', 0);
 
         // Redirige a la página especificada en el enlace
         window.location.href = this.href;
         
-        console.log("Género:",sessionStorage.getItem('genero')); // Salida: Género: hombre
-        console.log("Categoría:", sessionStorage.getItem('categoria')); // Salida: Categoría: pantalones
+      
     });
 });
 
 
 /*
-function mostrar(categoria , genero , precio){
+function mostrar(precio genero, categoria){
 fetch("./js/productos.json")
     .then(response => {
         if (!response.ok) {
@@ -54,5 +54,38 @@ fetch("./js/productos.json")
     .catch(error => {
         console.error('Error de fetch:', error);
     });
+}
+*/
+
+/*
+// compara si el producto es mayor al precio seleccionado
+if(producto.precio >= sessionStorage.getItem('precio') ){
+    //compara si el genero es distinto de "todos"
+    if(sessionStorage.genero != "all") {
+        //si es distinto de todos pregunta si coincide el genero de la prenda y ademas la categoria es igual a todos o coincide la categoria con la categoria seleccionada.
+        if((sessionStorage.genero == producto.genero)  && ((sessionStorage.categoria == "all")|| sessionStorage.categoria == producto.categoria ))
+          //suma la cadena del producto a la variable "cade"
+            cade += `
+        <li>
+            <img class="imagen" src="${producto.imagen}">
+            <p class="producto-descripcion">${producto.nombre}</p>
+            <p class="producto-precio">$ ${producto.precio}</p>
+            <a href="#" class="btn-carrito" data-id="${producto.id}">Agregar Al Carrito</a>
+        </li>
+        `;
+    }
+    //si el genero todos entonces realiza la comparacion de si categoria  es igual a todos o coincide con la categoria del producto.
+    else{
+        if((sessionStorage.categoria == "all")|| (sessionStorage.categoria == producto.categoria ) ) {
+            cade += `
+            <li>
+                <img class="imagen" src="${producto.imagen}">
+                <p class="producto-descripcion">${producto.nombre}</p>
+                <p class="producto-precio">$ ${producto.precio}</p>
+                <a href="#" class="btn-carrito" data-id="${producto.id}">Agregar Al Carrito</a>
+            </li>
+            `;
+        }
+    }
 }
 */

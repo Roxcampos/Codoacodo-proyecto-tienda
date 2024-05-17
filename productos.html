@@ -33,18 +33,23 @@
     </header>
     <main>
         <div id="filtro" class="filtro">
-            <label for="precio">Precio: </label>
+            <label for="precio" >Precio: </label>
             
-            <input type="text" >
-            <select id="tipoPrenda">
+            <input type="number" onchange="guardarPrecio(this.value)" placeholder="0" >
+            <select id="tipoPrenda" onchange="guardarCategoria(this.value)">
+                <option value="all">Todo</option>
                 <option value="remera">Remera</option>
-                <option value="Pantalon">Pantalon</option>
+                <option value="pantalon">Pantalon</option>
             </select>
-            <select id="genero">
+            <select id="genero" onchange="guardarGenero(this.value)">
+                <option value="all">Todo</option>
                 <option value="mujer">Mujer</option>
                 <option value="hombre">Hombre</option>
               </select>
+              <button class="filtrar" onclick="mostrar()">Aplicar fitro</button>
         </div>
+        
+        <!-- aca va la lista de productos-->
         <div >
             <ul id="productos" class="productos">
             </ul>
@@ -52,7 +57,7 @@
         </div>
 
 
-
+    <script>mostrar(sessionStorage.genero, sessionStorage.categoria, "")</script>
     </main>
     <footer> <!-- llamo al footer -->
         <script>

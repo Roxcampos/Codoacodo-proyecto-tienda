@@ -8,6 +8,7 @@ fetch("../productos.json")
                 <img class="imagen" src="${producto.imagen}">
                 <p class="producto-descripcion">${producto.nombre}</p>
                 <p class="producto-precio">$ ${producto.precio}</p>
+                <a href="#" class="btn-carrito" data-id="${producto.id}">Agregar Al Carrito</a>
             </li>
             `
             document.querySelector("#productos").innerHTML=cade
@@ -49,6 +50,16 @@ console.log("hola")
 
 
 // productos.js
+function guardarPrecio(precio) {
+    sessionStorage.setItem('precio', precio);
+}
+function guardarCategoria(categoria) {
+    sessionStorage.setItem('categoria', categoria);
+}
+function guardarGenero(genero) {
+    sessionStorage.setItem('genero', genero);
+}
+function mostrar(genero, categoria, precio){
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
 fetch("./js/productos.json")
@@ -61,6 +72,25 @@ fetch("./js/productos.json")
     .then(data => {
         let cade = ''; // Inicializa la variable fuera del bucle
         data.productos.forEach(producto => {
+         // compara si el producto es mayor al precio seleccionado
+if(producto.precio >= sessionStorage.getItem('precio') ){
+    //compara si el genero es distinto de "todos"
+    if(sessionStorage.genero != "all") {
+        //si es distinto de todos pregunta si coincide el genero de la prenda y ademas la categoria es igual a todos o coincide la categoria con la categoria seleccionada.
+        if((sessionStorage.genero == producto.genero)  && ((sessionStorage.categoria == "all")|| sessionStorage.categoria == producto.categoria ))
+          //suma la cadena del producto a la variable "cade"
+            cade += `
+        <li>
+            <img class="imagen" src="${producto.imagen}">
+            <p class="producto-descripcion">${producto.nombre}</p>
+            <p class="producto-precio">$ ${producto.precio}</p>
+            <a href="#" class="btn-carrito" data-id="${producto.id}">Agregar Al Carrito</a>
+        </li>
+        `;
+    }
+    //si el genero todos entonces realiza la comparacion de si categoria  es igual a todos o coincide con la categoria del producto.
+    else{
+        if((sessionStorage.categoria == "all")|| (sessionStorage.categoria == producto.categoria ) ) {
             cade += `
             <li>
                 <img class="imagen" src="${producto.imagen}">
@@ -69,6 +99,9 @@ fetch("./js/productos.json")
                 <a href="#" class="btn-carrito" data-id="${producto.id}">Agregar Al Carrito</a>
             </li>
             `;
+        }
+    }
+}
         });
         document.querySelector("#productos").innerHTML = cade;
 
@@ -85,6 +118,8 @@ fetch("./js/productos.json")
     .catch(error => {
         console.error('Error de fetch:', error);
     });
+
+}
 
 function agregarAlCarrito(producto) {
     const index = carrito.findIndex(p => p.id === producto.id);
