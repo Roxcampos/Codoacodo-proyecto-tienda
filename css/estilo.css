@@ -633,12 +633,17 @@ td,th{
   }
   .filtro select{
     width: 150px; 
-    margin: 15px;  
+    margin: 10px;  
     padding-left: 12px;
     padding-right: 20px;
     font-size: 20px;
   }
+.filtro button{
+  margin: 13px;  
+  padding-left: 12px;
+  padding-right: 20px;
 
+}
   /*Carrito*/
 /* General styles */
 .carrito body {
