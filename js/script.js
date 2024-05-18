@@ -1,32 +1,38 @@
 
-
+function clickearFiltro(){
 // Este codigo es para que me guarde en sessionstorage la categoria y genero.
 
 const enlaces = document.querySelectorAll('.store');
 
 // Itera sobre cada enlace y agrega un listener de evento a cada uno
 enlaces.forEach(enlace => {
-    enlace.addEventListener('click', function(event) {
+    enlace.addEventListener('click', function (event) {
         // Previene el comportamiento predeterminado del enlace
         event.preventDefault();
 
         // Obtiene el valor del atributo data-genero
         const genero = this.getAttribute('data-genero');
         const categoria = this.getAttribute('data-categoria');
-        
-        // Guarda el valor del atributo data-genero en sessionStorage
-        sessionStorage.setItem('genero', genero);
-        sessionStorage.setItem('categoria', categoria);
-        sessionStorage.setItem('precio', 0);
 
-        // Redirige a la página especificada en el enlace
-        window.location.href = this.href;
-        
-      
+        // Guarda el valor del atributo data-genero en sessionStorage
+        // Usar beforeunload para asegurar que los datos se guarden
+        window.addEventListener('beforeunload', function () {
+            sessionStorage.setItem('genero', genero);
+            sessionStorage.setItem('categoria', categoria);
+        });
+        new Promise((resolve) => {
+            sessionStorage.setItem('genero', genero);
+            sessionStorage.setItem('categoria', categoria);
+            sessionStorage.setItem('precio', 0);
+            resolve();
+        }).then(() => {
+            // Redirige a la página especificada en el enlace
+            window.location.href = this.href;
+        });
     });
 });
 
-
+}
 /*
 function mostrar(precio genero, categoria){
 fetch("./js/productos.json")
@@ -89,3 +95,42 @@ if(producto.precio >= sessionStorage.getItem('precio') ){
     }
 }
 */
+/*
+  // Selecciona todos los elementos <a> con la clase 'store'
+  const enlaces = document.querySelectorAll('.store');
+
+  // Itera sobre cada enlace y agrega un listener de evento a cada uno
+  enlaces.forEach(enlace => {
+      enlace.addEventListener('click', function(event) {
+          // Previene el comportamiento predeterminado del enlace
+          event.preventDefault();
+
+          // Obtiene el valor del atributo data-genero y data-categoria
+          const genero = this.getAttribute('data-genero');
+          const categoria = this.getAttribute('data-categoria');
+
+          // Guarda los valores en sessionStorage
+          sessionStorage.setItem('genero', genero);
+          sessionStorage.setItem('categoria', categoria);
+          sessionStorage.setItem('precio', 0);
+
+          // Verificar que los datos se hayan guardado antes de redirigir
+          setTimeout(() => {
+              const storedGenero = sessionStorage.getItem('genero');
+              const storedCategoria = sessionStorage.getItem('categoria');
+
+              if (storedGenero === genero && storedCategoria === categoria) {
+                  // Redirige a la página especificada en el enlace
+                  window.location.href = enlace.href;
+              } else {
+                  console.error('Los datos no se guardaron correctamente en sessionStorage');
+              }
+          }, 100000); // 100 milisegundos de retraso para la verificación
+      });
+  });
+  */
+function index() {
+    sessionStorage.setItem('genero', "all");
+    sessionStorage.setItem('categoria', "all");
+    sessionStorage.setItem('precio', 0);
+}
