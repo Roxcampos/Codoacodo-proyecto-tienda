@@ -59,9 +59,9 @@ function guardarCategoria(categoria) {
 function guardarGenero(genero) {
     sessionStorage.setItem('genero', genero);
 }
-function mostrar(genero, categoria, precio){
-let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
+let carrito = JSON.parse(sessionStorage.getItem('carrito')) || [];
+function mostrar(genero, categoria, precio){
 fetch("./js/productos.json")
     .then(response => {
         if (!response.ok) {
@@ -133,13 +133,13 @@ function agregarAlCarrito(producto) {
             cantidad: 1
         });
     }
-    localStorage.setItem('carrito', JSON.stringify(carrito));
+    sessionStorage.setItem('carrito', JSON.stringify(carrito));
     actualizarCarrito();
 }
 
 function actualizarCarrito() {
     const carritoBody = document.querySelector("#carrito-body");
-    const footer = document.querySelector("#footer");
+    const footer = document.querySelector("#tfooter");
 
     if (!carritoBody || !footer) return;  // Salir si no estamos en la página del carrito
 
@@ -194,7 +194,7 @@ function actualizarCantidad(productId, action) {
         } else if (action === 'decrement' && carrito[index].cantidad > 1) {
             carrito[index].cantidad -= 1;
         }
-        localStorage.setItem('carrito', JSON.stringify(carrito));
+        sessionStorage.setItem('carrito', JSON.stringify(carrito));
         actualizarCarrito();
     }
 }

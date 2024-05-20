@@ -1,17 +1,18 @@
 
-  document.addEventListener('DOMContentLoaded', () => {
-      const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+ //toma el elemento carrito y lo actualiza, aunque no estoy seguro de cuando es que lo actualiza aun.
+ document.addEventListener('DOMContentLoaded', () => {
+      const carrito = JSON.parse(sessionStorage.getItem('carrito')) || [];
       actualizarCarrito(carrito);
   });
-
+// actualiza el carrito
   function actualizarCarrito(carrito) {
       const carritoBody = document.querySelector("#carrito-body");
-      const footer = document.querySelector("#tfooter");
+      const tfooter = document.querySelector("#tfooter");
 
       carritoBody.innerHTML = '';
 
       if (carrito.length === 0) {
-          footer.innerHTML = '<tr><td class="border-bottom-left border-bottom-right" colspan="4">¡No hay ningún elemento en el carrito!</td></tr>';
+          tfooter.innerHTML = '<tr><td class="border-bottom-left border-bottom-right" colspan="4">¡No hay ningún elemento en el carrito!</td></tr>';
           return;
       }
 
@@ -35,7 +36,7 @@
           `;
       });
 
-      footer.innerHTML = `
+      tfooter.innerHTML = `
       <tr>
           <td class="border-bottom-left" colspan="3">Total</td>
           <td class="border-bottom-right">$${totalCarrito.toFixed(2)}</td>
@@ -54,12 +55,12 @@
   function actualizarCantidad(carrito, productId, action) {
       const index = carrito.findIndex(p => p.id == productId);
       if (index !== -1) {
-          if (action === 'increment') {
+          if (action ==='increment') {
               carrito[index].cantidad += 1;
           } else if (action === 'decrement' && carrito[index].cantidad > 1) {
               carrito[index].cantidad -= 1;
           }
-          localStorage.setItem('carrito', JSON.stringify(carrito));
+          sessionStorage.setItem('carrito', JSON.stringify(carrito));
           actualizarCarrito(carrito);
       }
   }
