@@ -1,207 +1,215 @@
-*,header,
+/* General Styles */
+*,
+header,
 body,
-footer{
+footer {
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-weight: normal;
     font-style: normal;
     box-sizing: border-box;
     text-decoration: none;
-    
 }
 
+/* Header Styles */
 header {
     background-color: #f3f593;
 }
-.caja{
+
+.caja {
     width: 100%;
 }
+
 .encabezado {
-  display: flex; /* Cambia a un contenedor flex */
-  justify-content: space-between; /* Distribuye el espacio entre los elementos */
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
 }
 
 nav {
-    display: inline;
-    margin: 10px 10px 0 5px;
-  
-}
-.navegador{
-  display: flex;
-  justify-content: space-between;
+    width: 100%;
 }
 
-nav li{
-    display: inline;
-    margin: 0px 0px 0px 15px;
-    align-items: right;
+.navegador {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.encabezado a:hover{
+nav li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.encabezado a:hover,
+.menu a:hover {
     color: #c78c19;
     text-decoration: underline;
 }
+
 .menu {
     text-transform: uppercase;
-    color: #000000;
+    color: #000;
     font-weight: bold;
     font-size: 22px;
-    text-decoration: none;
     text-align: right;
     position: relative;
-    display: inline-block;
-    z-index: 1; /* Ajusta el z-index para que esté por debajo del contenido del main */
-    
-    width: 40%; /* Ocupa el 40% del ancho total */
-    padding: 20px; /* Espaciado interno */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
 }
 
-.logo img{
+.logo img {
     width: 195px;
 }
-.derecha{
+
+.derecha {
     text-align: right;
 }
-.izquierda{
+
+.izquierda {
     text-align: left;
 }
-.centro{
+
+.centro {
     text-align: center;
 }
-.menu h1{
+
+.menu h1 {
     margin-top: 1.5%;
     text-align: left;
 }
-.login{
+
+.login {
     text-align: right;
 }
-.menu a:hover{
-    color: #c78c19;
-    text-decoration: underline;
-    font-weight: bold;
-    font-size: 18px;
-}
+
 .nav > li {
-  float:left;
-  text-align: right;
+    float: left;
+    text-align: right;
+    position: relative; /* Ensure positioning context for submenu */
 }
 
 .nav li a {
-  color:#897e40;
-  text-decoration:none;
-  padding:10px 12px;
-  display:block;
-  font-weight: bold;
-  font-size: 18px;
+    color: #897e40;
+    text-decoration: none;
+    padding: 10px 12px;
+    display: block;
+    font-weight: bold;
+    font-size: 18px;
 }
 
 .nav li a:hover {
-  background-color:#434343;
+    background-color: #434343;
+    color: #fff;
 }
 
 .nav li ul {
-  display:none;
-  position:absolute;
-  min-width:140px;
+    display: none;
+    position: absolute;
+    min-width: 140px;
+    z-index: 999; /* Ensure the submenu is on top */
+    background-color: #fff; /* Background color for the dropdown menu */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Optional: add shadow for better visibility */
+    border-radius: 4px; /* Optional: add border radius for rounded corners */
 }
 
 .nav li:hover > ul {
-  display:block;
+    display: block;
 }
 
 .nav li ul li {
-  position:relative;
+    position: relative;
 }
 
 .nav li ul li ul {
-  right:-140px;
-  top:0px;
+    right: -140px;
+    top: 0;
 }
+
 .submenu {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  z-index: 2; /* Ajusta el z-index para que esté por encima del contenido del main */
+    display: none;
+    position: absolute;
+    background-color: #fff; /* Background color for the submenu */
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Ensure the submenu is on top */
+    border-radius: 4px; /* Optional: add border radius for rounded corners */
 }
 
 .submenu li {
-  float: none;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
+    float: none;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    color: #897e40; /* Text color for submenu items */
 }
 
 .submenu li:hover {
-  background-color: #ddd;
+    background-color: #ddd;
+    color: #434343; /* Change text color on hover */
 }
 
 .menu:hover .submenu {
-  display: block;
+    display: block;
 }
 
 .search-container {
-  text-align: right; /* Alinea el contenido a la derecha */
-  padding: 10px; /* Espaciado interno */
-  align-self: flex-end; /* Alinea el contenedor a la parte inferior del espacio disponible */
-  padding: 15px; 
-  width: 15%; 
-  float: right; /* Alinea el contenedor a la derecha */
-  }
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    width: 15%;
+    float: right;
+}
+
+.search-container form {
+    display: flex;
+    align-items: center;
+}
 
 .search-container input[type="text"] {
-  padding: 5px;
-  margin-right: 10px; /* Espacio entre el campo de búsqueda y el botón */
-  border: 1px solid #ccc;
-  border-radius: 4px;
+    padding: 5px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 .search-container button {
-  padding: 10px 20px;
-  background-color: #e7b268; /* Color de fondo del botón */
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+    padding: 10px 20px;
+    background-color: #e7b268;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 .search-container button:hover {
-  background-color: #d66310; /* Color de fondo del botón al pasar el cursor */
+    background-color: #d66310;
 }
+
+.carrito {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrito img {
+    width: 40px;
+}
+
 
 .contenedor-banner {
   width: 100%;
   position: relative;
   margin-bottom: 1rem;
+  z-index: 1; /* Ensure banner is below the menu */
 }
+
 .contenedor-banner img {
   width: 100%;
   text-align: center;
-}
-.carrito img{
-  width: 40px;
-}
-.btn-carrito{
-  display: flex;
-  flex-direction: row;
-  position: absolute;
-  align-items: center;
-   justify-content: center;
-   padding: 0.5%;
-   gap: 8px;
-   width: 12%;
-   background-color: #e17510;
-   border-radius: 24px;
-   font-family: "Inter";
-   font-size: 14px;
-   line-height: 10px;
-   text-align: center;
-   color: #fff;
-}
-.btn-carrito:hover{
-  background-color: #e95515;
- 
 }
 div#slider { overflow: hidden; } /* las imágenes no van a salir del márgen de la pantalla*/
 div#slider figure img { width: 20%; float: left; }
@@ -241,17 +249,18 @@ div#slider figure {
     height: 280px;
 }
 
-.productos li{
-    display: inline-block;
-    text-align: center;
-    width: 30%;
-    vertical-align: top;
-    margin: 1.5% 1.5%;
-    padding: 30px 20px;
-    box-sizing: border-box;
-    border: 2px solid #000000;
-    border-radius: 10px;
-    min-width: 380px;
+.productos li {
+  display: inline-block;
+  text-align: center;
+  width: calc(30% - 30px); /* Ancho ajustado para tres tarjetas por fila */
+  vertical-align: top;
+  margin: 1.5% 1.5%;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  min-width: 380px;
+  position: relative; /* Agregamos posición relativa */
 }
 
 .productos li:hover{
@@ -281,6 +290,24 @@ div#slider figure {
     font-size: 20px;
     font-weight: bold;
     margin-top:10px;
+}
+.btn-carrito {
+  position: absolute; /* Cambiamos a posición absoluta */
+  bottom: 8px; /* Alineamos el botón en la parte inferior */
+  left: 50%; /* Lo movemos al 50% del lado izquierdo */
+  transform: translateX(-50%); /* Alineamos el botón horizontalmente */
+  width: 80%; /* Ancho ajustado para el botón */
+  background-color: #e17510;
+  border-radius: 24px;
+  font-family: "Inter";
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.btn-carrito:hover {
+  background-color: #e95515;
 }
 
 footer{
@@ -646,66 +673,13 @@ td,th{
 }
   /*Carrito*/
 /* General styles */
-.carrito body {
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
-  margin: 0;
-  padding: 0;
-}
-
-.carrito ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.carrito li {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-  background-color: #fff;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.carrito img {
-  width: 50px;
-  height: 50px;
-  }
-
-.carrito producto-descripcion {
-  flex-grow: 1;
-  font-size: 18px;
-  color: #333;
-}
-
-.carrito producto-precio {
-  font-size: 18px;
-  color: #28a745;
-  margin-right: 20px;
-}
-
-.btn-carrito {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
-
-.btn-carrito:hover {
-  background-color: #0056b3;
-}
-
-/* Table styles */
+/* Tabla carrito */
 .tabla-calculo {
   margin: 40px 0;
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px rgb(255, 255, 255);
 }
 
 .tabla {
@@ -718,7 +692,7 @@ td,th{
   font-size: 24px;
   margin-bottom: 10px;
   font-weight: bold;
-  color: #333;
+  color: #fefefe; /* Title color set to black */
 }
 
 .tabla th, .tabla td {
@@ -727,16 +701,46 @@ td,th{
 }
 
 .tabla th {
-  background-color: #007bff;
+  background-color: #e12020;
   color: white;
 }
 
 .tabla td {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #ddd; /* Light bottom border */
+}
+
+/* Specific styles for quantity and delete buttons */
+.tabla .btn-group {
+  display: flex;
+  align-items: center;
+  margin: 0; /* Remove margin */
+  padding: 0; /* Remove padding */
+}
+
+.tabla .cantidad-btn, .tabla .eliminar-btn {
+  background-color: #f20c0c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.tabla .cantidad-btn:first-of-type, .tabla .eliminar-btn:first-of-type {
+  margin-left: 0; /* Remove left margin for the first button */
+}
+
+.tabla .cantidad-btn:hover, .tabla .eliminar-btn:hover {
+  background-color: #bf0a0a;
+}
+
+.tabla .cantidad-btn:active, .tabla .eliminar-btn:active {
+  background-color: #a70808;
 }
 
 .cabecera {
-  border-top: 2px solid #007bff;
+  border-top: 2px solid #ec250f;
 }
 
 .border-top-left {
@@ -760,5 +764,3 @@ td,th{
   font-weight: bold;
   background-color: #f1f1f1;
 }
-
-  

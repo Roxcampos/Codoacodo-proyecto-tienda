@@ -41,12 +41,17 @@
             </ul>
         </div>
         <div class="carrito">
-            <a href="./shop.html"><img src="./img/carrito-de-compras.png" alt="logo carrito"></a>
+            <a href="./shop.html">
+                <img src="./img/carrito-de-compras.png" alt="logo carrito">
+                <span id="cantidad-productos-carrito" class="cantidad-productos">0</span>
+            </a>
         </div>
         <div class="search-container derecha col-4">
             <form>
                 <input type="text" id="search" placeholder="Buscar...">
-                <button type="submit"><i class="fa fa-search">Buscar</i></button>
+               
+                <button type="submit"><i class="fa fa-search"></i></button>
+                
             </form>
         </div>
     </div>
@@ -54,4 +59,6 @@
 
 </div>
 <script src="./js/script.js"></script>
+<script src="./js/shop.js"></script>
 <script>clickearFiltro()</script>
+<script>actualizarCarrito()</script>

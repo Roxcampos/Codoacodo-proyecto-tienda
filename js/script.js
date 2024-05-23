@@ -134,3 +134,5 @@ function index() {
     sessionStorage.setItem('categoria', "all");
     sessionStorage.setItem('precio', 0);
 }
+
+
