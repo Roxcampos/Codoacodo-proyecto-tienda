@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./js/productos.js"></script>
+    <script src="./js/shop.js"></script>
 </head>
 
 <body>
@@ -33,9 +34,9 @@
     </header>
     <main>
         <div id="filtro" class="filtro">
-            <label for="precio" >Precio: </label>
-            
-            <input type="number" onchange="guardarPrecio(this.value)" placeholder="0" >
+            <label for="precio">Precio: </label>
+
+            <input type="number" onchange="guardarPrecio(this.value)" placeholder="0">
             <select id="tipoPrenda" onchange="guardarCategoria(this.value)">
                 <option value="all">Todo</option>
                 <option value="remera">Remera</option>
@@ -45,19 +46,24 @@
                 <option value="all">Todo</option>
                 <option value="mujer">Mujer</option>
                 <option value="hombre">Hombre</option>
-              </select>
-              <button class="filtrar" onclick="mostrar()">Aplicar filtro</button>
-        </div>
+            </select>
         
-        <!-- aca va la lista de productos-->
-        <div >
-            <ul id="productos" class="productos">
-            </ul>
-            
+            <select id="orden" onchange="guardarOrden(this.value)">
+                <option value="Ascendente">Ascendente</option>
+                <option value="Descendente">Descendente</option>
+            </select>
+            <button class="filtrar" onclick="mostrar()">Aplicar filtro</button>
         </div>
 
-       
-    
+        <!-- aca va la lista de productos-->
+        <div>
+            <ul id="productos" class="productos">
+            </ul>
+
+        </div>
+
+
+
     </main>
     <footer> <!-- llamo al footer -->
         <script>
@@ -68,8 +74,8 @@
         <!-- sin este div por alguna razon no se visualiza, supongo que hace que se muestre y por eso el #header de la funsion anterior -->
         <div id="footer"></div>
     </footer>
-    <script> document.addEventListener('DOMContentLoaded',mostrar(sessionStorage.genero, sessionStorage.categoria, sessionStorage.Precio))</script>
- 
+    <script> document.addEventListener('DOMContentLoaded', mostrar(sessionStorage.genero, sessionStorage.categoria, sessionStorage.Precio))</script>
+
 </body>
 
 </html>
