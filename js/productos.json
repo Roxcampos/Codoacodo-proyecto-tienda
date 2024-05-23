@@ -131,7 +131,7 @@
         "imagen":"../img/remeras%20mujer/remera1.webp",
         "nombre":"remera algodon verde",
         "genero":"mujer",
-        "precio": 65000,
+        "precio": 26000,
         "categoria":"remera"
 
     },
@@ -140,7 +140,7 @@
         "imagen":"../img/remeras%20mujer/remera2.webp",
         "nombre":"remera algodon negra",
         "genero":"mujer",
-        "precio": 65000,
+        "precio": 20000,
         "categoria":"remera"
 
     },
@@ -149,7 +149,7 @@
         "imagen":"../img/remeras%20mujer/remera3.webp",
         "nombre":"remera algodon blanca",
         "genero":"mujer",
-        "precio": 65000,
+        "precio": 22000,
         "categoria":"remera"
 
     },
@@ -158,7 +158,7 @@
         "imagen":"../img/remeras%20mujer/remera4.webp",
         "nombre":"remera blanca dibujo",
         "genero":"mujer",
-        "precio": 65000,
+        "precio": 27000,
         "categoria":"remera"
 
     },
@@ -167,7 +167,7 @@
         "imagen":"../img/remeras%20mujer/remera5.webp",
         "nombre":"remera roja lisa",
         "genero":"mujer",
-        "precio": 65000,
+        "precio": 24000,
         "categoria":"remera"
 
     },
@@ -176,7 +176,7 @@
         "imagen":"../img/remeras%20mujer/remera6.webp",
         "nombre":"remera brillosa gris",
         "genero":"mujer",
-        "precio": 65000,
+        "precio": 25000,
         "categoria":"remera"
 
     },
@@ -185,7 +185,7 @@
         "imagen":"../img/remeras%20mujer/remera7.webp",
         "nombre":"remera deportiva",
         "genero":"mujer",
-        "precio": 65000,
+        "precio": 19000,
         "categoria":"remera"
 
     },
@@ -194,7 +194,7 @@
         "imagen":"../img/remeras%20hombre/remera1.webp",
         "nombre":"remera manga larga verde",
         "genero":"hombre",
-        "precio": 65000,
+        "precio": 38000,
         "categoria":"remera"
 
     },
@@ -203,7 +203,7 @@
         "imagen":"../img/remeras%20hombre/remera2.webp",
         "nombre":"remera algodon azul",
         "genero":"hombre",
-        "precio": 65000,
+        "precio": 28000,
         "categoria":"remera"
 
     },
@@ -212,7 +212,7 @@
         "imagen":"../img/remeras%20hombre/remera3.webp",
         "nombre":"remera negra malvinas",
         "genero":"hombre",
-        "precio": 65000,
+        "precio":31000,
         "categoria":"remera"
 
     },
@@ -221,7 +221,7 @@
         "imagen":"../img/remeras%20hombre/remera4.webp",
         "nombre":"remera negra hercules",
         "genero":"hombre",
-        "precio": 65000,
+        "precio": 32000,
         "categoria":"remera"
 
     },
@@ -230,7 +230,7 @@
         "imagen":"../img/remeras%20hombre/remera5.webp",
         "nombre":"remera lisa negra",
         "genero":"hombre",
-        "precio": 65000,
+        "precio": 30000,
         "categoria":"remera"
 
     },
@@ -239,7 +239,7 @@
         "imagen":"../img/remeras%20hombre/remera6.webp",
         "nombre":"remera lisa azul",
         "genero":"hombre",
-        "precio": 65000,
+        "precio": 25000,
         "categoria":"remera"
 
     },
@@ -248,7 +248,7 @@
         "imagen":"../img/remeras%20hombre/remera7.webp",
         "nombre":"remera estampada blanca",
         "genero":"hombre",
-        "precio": 65000,
+        "precio": 35000,
         "categoria":"remera"
 
     }
