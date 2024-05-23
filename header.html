@@ -1,22 +1,27 @@
-
 <div class="caja row">
 
     <div class="encabezado">
         <div class="consulta izquierda col-">
             <a href="./contacto.html">consultas@KappaCode.com</a>
         </div>
-        <div class="sesion derecha col-9">
+        <div class="sesion derecha col-9 ">
+            <a class="carrito" href="./shop.html">
+                <img src="./img/carrito-de-compras.png" alt="logo carrito">
+                <span id="cantidad-productos-carrito" class="cantidad-productos">0</span>
+            </a>
+           
             <a href="./registro.html">Crear cuenta | </a>
             <a href="./login.html"> Login</a>
+          
         </div>
     </div>
 
     <nav>
         <div class="navegador">
-            <div class="logo izquierda  col-2 col-s-12">
+            <div class="logo col-4 col-s-12">
                 <a href="./index.html"><img src="./img/logoKappaCode.png" alt="logo kappa"></a>
             </div>
-            <div class="menu derecha col-10 col-s-12">
+            <div class="menu derecha col-8 col-s-12">
                 <ul class="nav">
                     <li><a href="./index.html">Inicio</a></li>
                     <li><a class="store" href="productos.html" data-genero="all" data-categoria="all">Productos</a>
@@ -44,21 +49,14 @@
                         </ul>
                     </li>
                     <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="#"><span class="fa fa-search show_search no_link"></span></a></li>
                 </ul>
             </div>
-            <div class="carrito">
-                <a href="./shop.html">
-                    <img src="./img/carrito-de-compras.png" alt="logo carrito">
-                    <span id="cantidad-productos-carrito" class="cantidad-productos">0</span>
-                </a>
-            </div>
-            <div class="search-container derecha col-4">
-                <form>
-                    <input type="text" id="search" placeholder="Buscar...">
+            <div class="buscador col-12 col-s-12">
 
-                    <button type="submit"><i class="fa fa-search"></i></button>
-
-                </form>
+              
+                 
+                </div>
             </div>
         </div>
     </nav>
