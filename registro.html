@@ -35,15 +35,16 @@
     <main>
         <section class="form-register">
             <h4>FORMULARIO DE REGISTRO</h4>
-            <input class="controls" type="text" name="nombres" id="nombres" required placeholder="Ingrese su Nombre">
-            <input class="controls" type="text" name="apellidos" id="apellidos" required placeholder="Ingrese su Apellido">
-            <input class="controls" type="email" name="correo" id="correo" required placeholder="Ingrese su Correo">
-            <input class="controls" type="password" name="correo" id="correo" required placeholder="Ingrese su Contraseña">
-            
-            <label class="checkbox"><input type="checkbox" checked>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></label>
-            <input class="botons" type="submit" value="Registrar">
+            <form id="registerForm">
+                <input class="controls" type="text" name="nombres" id="nombres" required placeholder="Ingrese su Nombre">
+                <input class="controls" type="text" name="apellidos" id="apellidos" required placeholder="Ingrese su Apellido">
+                <input class="controls" type="email" name="correo" id="correo" required placeholder="Ingrese su Correo">
+                <input class="controls" type="password" name="contrasena" id="contrasena" required placeholder="Ingrese su Contraseña">
+                <label class="checkbox"><input type="checkbox" checked>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></label>
+                <input class="botons" type="submit" value="Registrar">
+            </form>
             <p><a href="login.html">¿Ya tengo Cuenta?</a></p>
-          </section>
+        </section>
     </main>
     <footer>   <!-- llamo al footer -->
         <script>
@@ -55,6 +56,7 @@
        <div id="footer"></div>
     </footer>
     <script>clickearFiltro()</script>
+    <script src="./js/registro.js"></script>
 </body>
 
 </html>
