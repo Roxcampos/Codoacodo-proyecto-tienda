@@ -133,6 +133,7 @@ function index() {
     sessionStorage.setItem('genero', "all");
     sessionStorage.setItem('categoria', "all");
     sessionStorage.setItem('precio', 0);
+    sessionStorage.setItem('orden',"Ascendente")
 }
 
 

@@ -53,6 +53,9 @@ console.log("hola")
 function guardarPrecio(precio) {
     sessionStorage.setItem('precio', precio);
 }
+function guardarOrden(orden) {
+    sessionStorage.setItem('orden', orden);
+}
 function guardarCategoria(categoria) {
     sessionStorage.setItem('categoria', categoria);
 }
@@ -61,25 +64,27 @@ function guardarGenero(genero) {
 }
 
 let carrito = JSON.parse(sessionStorage.getItem('carrito')) || [];
-function mostrar(genero, categoria, precio){
-fetch("./js/productos.json")
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Error en la solicitud');
-        }
-        return response.json();
-    })
-    .then(data => {
-        let cade = ''; // Inicializa la variable fuera del bucle
-        data.productos.forEach(producto => {
-         // compara si el producto es mayor al precio seleccionado
-if(producto.precio >= sessionStorage.getItem('precio') ){
-    //compara si el genero es distinto de "todos"
-    if(sessionStorage.genero != "all") {
-        //si es distinto de todos pregunta si coincide el genero de la prenda y ademas la categoria es igual a todos o coincide la categoria con la categoria seleccionada.
-        if((sessionStorage.genero == producto.genero)  && ((sessionStorage.categoria == "all")|| sessionStorage.categoria == producto.categoria ))
-          //suma la cadena del producto a la variable "cade"
-            cade += `
+//funcion anterior de mostrar
+/* 
+function mostrar(genero, categoria, precio) {
+    fetch("./js/productos.json")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error en la solicitud');
+            }
+            return response.json();
+        })
+        .then(data => {
+            let cade = ''; // Inicializa la variable fuera del bucle
+            data.productos.forEach(producto => {
+                // compara si el producto es mayor al precio seleccionado
+                if (producto.precio >= sessionStorage.getItem('precio')) {
+                    //compara si el genero es distinto de "todos"
+                    if (sessionStorage.genero != "all") {
+                        //si es distinto de todos pregunta si coincide el genero de la prenda y ademas la categoria es igual a todos o coincide la categoria con la categoria seleccionada.
+                        if ((sessionStorage.genero == producto.genero) && ((sessionStorage.categoria == "all") || sessionStorage.categoria == producto.categoria))
+                            //suma la cadena del producto a la variable "cade"
+                            cade += `
         <li>
             <img class="imagen" src="${producto.imagen}">
             <p class="producto-descripcion">${producto.nombre}</p>
@@ -87,11 +92,11 @@ if(producto.precio >= sessionStorage.getItem('precio') ){
             <a href="#" class="btn-carrito" data-id="${producto.id}">Agregar Al Carrito</a>
         </li>
         `;
-    }
-    //si el genero todos entonces realiza la comparacion de si categoria  es igual a todos o coincide con la categoria del producto.
-    else{
-        if((sessionStorage.categoria == "all")|| (sessionStorage.categoria == producto.categoria ) ) {
-            cade += `
+                    }
+                    //si el genero todos entonces realiza la comparacion de si categoria  es igual a todos o coincide con la categoria del producto.
+                    else {
+                        if ((sessionStorage.categoria == "all") || (sessionStorage.categoria == producto.categoria)) {
+                            cade += `
             <li>
                 <img class="imagen" src="${producto.imagen}">
                 <p class="producto-descripcion">${producto.nombre}</p>
@@ -99,26 +104,98 @@ if(producto.precio >= sessionStorage.getItem('precio') ){
                 <a href="#" class="btn-carrito" data-id="${producto.id}">Agregar Al Carrito</a>
             </li>
             `;
-        }
-    }
-}
-        });
-        document.querySelector("#productos").innerHTML = cade;
-
-        // Añadir event listener a los botones "Agregar Al Carrito"
-        document.querySelectorAll(".btn-carrito").forEach(button => {
-            button.addEventListener('click', event => {
-                event.preventDefault();
-                const productId = button.getAttribute('data-id');
-                const product = data.productos.find(p => p.id == productId);
-                agregarAlCarrito(product);
+                        }
+                    }
+                }
             });
-        });
-    })
-    .catch(error => {
-        console.error('Error de fetch:', error);
-    });
+            document.querySelector("#productos").innerHTML = cade;
 
+            // Añadir event listener a los botones "Agregar Al Carrito"
+            document.querySelectorAll(".btn-carrito").forEach(button => {
+                button.addEventListener('click', event => {
+                    event.preventDefault();
+                    const productId = button.getAttribute('data-id');
+                    const product = data.productos.find(p => p.id == productId);
+                    agregarAlCarrito(product);
+                });
+            });
+        })
+        .catch(error => {
+            console.error('Error de fetch:', error);
+        });
+}
+*/
+
+function mostrar(genero, categoria, precio) {
+    fetch("./js/productos.json")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error en la solicitud');
+            }
+            return response.json();
+        })
+        .then(data => {
+            const filtroOrden = sessionStorage.getItem('orden'); // Obtener el criterio de ordenación (ascendente o descendente)
+
+            // Ordenar los productos según el criterio
+            data.productos.sort((a, b) => {
+                if (filtroOrden === 'Ascendente') {
+                    return a.precio - b.precio;
+                } else if (filtroOrden === 'Descendente') {
+                    return b.precio - a.precio;
+                }
+            });
+
+            let cade = ''; // Inicializa la variable fuera del bucle
+
+            data.productos.forEach(producto => {
+                // compara si el producto es mayor al precio seleccionado
+                if (producto.precio >= sessionStorage.getItem('precio')) {
+                    //compara si el genero es distinto de "todos"
+                    if (sessionStorage.genero != "all") {
+                        //si es distinto de todos pregunta si coincide el genero de la prenda y ademas la categoria es igual a todos o coincide la categoria con la categoria seleccionada.
+                        if ((sessionStorage.genero == producto.genero) && ((sessionStorage.categoria == "all") || sessionStorage.categoria == producto.categoria))
+                            //suma la cadena del producto a la variable "cade"
+                            cade += `
+        <li>
+            <img class="imagen" src="${producto.imagen}">
+            <p class="producto-descripcion">${producto.nombre}</p>
+            <p class="producto-precio">$ ${producto.precio}</p>
+            <a href="#" class="btn-carrito" data-id="${producto.id}">Agregar Al Carrito</a>
+        </li>
+        `;
+                    }
+                    //si el genero todos entonces realiza la comparacion de si categoria  es igual a todos o coincide con la categoria del producto.
+                    else {
+                        if ((sessionStorage.categoria == "all") || (sessionStorage.categoria == producto.categoria)) {
+                            cade += `
+            <li>
+                <img class="imagen" src="${producto.imagen}">
+                <p class="producto-descripcion">${producto.nombre}</p>
+                <p class="producto-precio">$ ${producto.precio}</p>
+                <a href="#" class="btn-carrito" data-id="${producto.id}">Agregar Al Carrito</a>
+            </li>
+            `;
+                        }
+                    }
+                }
+            });
+
+            document.querySelector("#productos").innerHTML = cade;
+
+            // Añadir event listener a los botones "Agregar Al Carrito"
+            document.querySelectorAll(".btn-carrito").forEach(button => {
+                button.addEventListener('click', event => {
+                    event.preventDefault();
+                    const productId = button.getAttribute('data-id');
+                    const product = data.productos.find(p => p.id == productId);
+                    agregarAlCarrito(product);
+                });
+            });
+        })
+        .catch(error => {
+            console.error('Error de fetch:', error);
+        });
 }
 
 function agregarAlCarrito(producto) {
