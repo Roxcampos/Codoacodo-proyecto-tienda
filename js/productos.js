@@ -161,7 +161,7 @@ function mostrar(genero, categoria, precio) {
             <img class="imagen" src="${producto.imagen}">
             <p class="producto-descripcion">${producto.nombre}</p>
             <p class="producto-precio">$ ${producto.precio}</p>
-            <a href="#" class="btn-carrito" data-id="${producto.id}">Agregar Al Carrito</a>
+            <button class="btn-carrito" data-id="${producto.id}" onclick="actualizarCantidadProductos()">Agregar Al Carrito</button>
         </li>
         `;
                     }
@@ -173,7 +173,7 @@ function mostrar(genero, categoria, precio) {
                 <img class="imagen" src="${producto.imagen}">
                 <p class="producto-descripcion">${producto.nombre}</p>
                 <p class="producto-precio">$ ${producto.precio}</p>
-                <a href="#" class="btn-carrito" data-id="${producto.id}">Agregar Al Carrito</a>
+                <button onclick="actualizarCantidadProductos()" class="btn-carrito" data-id="${producto.id}">Agregar Al Carrito</button>
             </li>
             `;
                         }

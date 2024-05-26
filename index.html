@@ -11,21 +11,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./js/script.js"></script>
+    <script src="./js/productos.js"></script>
+    <script src="./js/carrito.js"></script>
+    <script src="./js/shop.js"></script>
 </head>
 
 <body>
-   <header>
-    <!-- llamo al header -->
-    <script>
-        $(function() {
-            $("#header").load("header.html", function() {
-                $.getScript("./js/carrito.js");
+    <header>
+        <!-- llamo al header -->
+        <script>
+            $(function () {
+                $("#header").load("header.html", function () {
+                    $.getScript("./js/carrito.js");
+                });
             });
-        });
-    </script>
-    <!-- sin este div por alguna razon no se visualiza, supongo que hace que se muestre y por eso el #header de la funsion anterior -->
-   <div id="header"></div>
-<!-- Claro, desglosemos paso a paso lo que hace ese código:
+        </script>
+        <!-- sin este div por alguna razon no se visualiza, supongo que hace que se muestre y por eso el #header de la funsion anterior -->
+        <div id="header"></div>
+        <!-- Claro, desglosemos paso a paso lo que hace ese código:
 
 1- <script>: Esta etiqueta HTML se utiliza para incluir código JavaScript en la página.
 2- $(function(){ ... }): Esto es una abreviatura de $(document).ready(function(){ ... }). Es una función de jQuery que se ejecuta cuando el documento HTML está completamente cargado y listo para manipularse.
@@ -33,147 +36,40 @@
    · $("#header"): Esto selecciona el elemento con el id "header". Es decir, busca un elemento en el HTML con el atributo id igual a "header".
    · .load("header.html"): Este método de jQuery carga el contenido de un archivo HTML (en este caso, "header.html") y lo inserta dentro del elemento seleccionado. En este caso, insertará el contenido de "header.html" dentro del elemento con el id "header".
 4- <div id="header"></div>: Este es el contenedor en el HTML donde se cargará el contenido del encabezado. Es un div con el id "header". -->
-<!-- main mostramos tarjetas de productos -->
+        <!-- main mostramos tarjetas de productos -->
 
-</header>
+    </header>
     <main>
-    <div class="clase-principal">
-        <div id="slider">
-            <figure>
-            <img src="img/carousel/0424-6-3-cuotas-sin-interes.webp" alt="">
-            <img src="img/carousel/0424-smart-jacket-banner.webp" alt="">
-            <img src="img/carousel/0424-invierno-hombre.webp" alt="">
-            <img src="img/carousel/0424-invierno-mujer.webp" alt="">
-            <img src="img/carousel/0424-sale-envios-gratis-115000-3.webp" alt="">
-            </figure>
+        <div class="clase-principal">
+            <div id="slider">
+                <figure>
+                    <img src="img/carousel/0424-6-3-cuotas-sin-interes.webp" alt="">
+                    <img src="img/carousel/0424-smart-jacket-banner.webp" alt="">
+                    <img src="img/carousel/0424-invierno-hombre.webp" alt="">
+                    <img src="img/carousel/0424-invierno-mujer.webp" alt="">
+                    <img src="img/carousel/0424-sale-envios-gratis-115000-3.webp" alt="">
+                </figure>
             </div>
-          <div class="listado-productos">
-        <div id="remera-hombre">
-            <ul class="productos">
-                <li>
-                    <img class="imagen" src="./img/remeras hombre/remera1.webp">
-                    <p class="producto-precio">$ 15.000</p>
-                </li>
-                <li>
-                    <img class="imagen" src="./img/remeras hombre/remera2.webp">
-                    <p class="producto-precio">$ 15.000</p>
-                </li>
-                <li>
-                    <img class="imagen" src="./img/remeras hombre/remera3.webp">
-                    <p class="producto-precio">$ 15.000</p>
-                </li>
-            </ul>
-        </div>
-        <div id="remera-mujer">
-            <ul class="productos">
-                <li>
-                    <img class="imagen" src="./img/remeras mujer/remera1.webp">
-                    <p class="producto-precio">$ 15.000</p>
-                </li>
-                <li>
-                    <img class="imagen" src="./img/remeras mujer/remera2.webp">
-                    <p class="producto-precio">$ 15.000</p>
-                </li>
-                <li>
-                    <img class="imagen" src="./img/remeras mujer/remera3.webp">
-                    <p class="producto-precio">$ 15.000</p>
-                </li>
-            </ul>
-        </div>
-        <div id="pantalon-hombre">
-            <ul class="productos">
-                <li>
-                    <img class="imagen" src="./img/pantalon hombre/pantalon1.webp">
-                    <p class="producto-precio">$ 15.000</p>
-                </li>
-                <li>
-                    <img class="imagen" src="./img/pantalon hombre/pantalon4.webp">
-                    <p class="producto-precio">$ 15.000</p>
-                </li>
-                <li>
-                    <img class="imagen" src="./img/pantalon hombre/pantalon7.webp">
-                    <p class="producto-precio">$ 15.000</p>
-                </li>
-            </ul>
-        </div>
-        <div id="pantalon-mujer">
-            <ul class="productos">
-                <li>
-                    <img class="imagen" src="./img/pantalon mujer/pantalon1.webp">
-                    <p class="producto-precio">$ 15.000</p>
-                </li>
-                <li>
-                    <img class="imagen" src="./img/pantalon mujer/pantalon2.webp">
-                    <p class="producto-precio">$ 15.000</p>
-                </li>
-                <li>
-                    <img class="imagen" src="./img/pantalon mujer/pantalon3.webp">
-                    <p class="producto-precio">$ 15.000</p>
-                </li>
-            </ul>
-        </div>
-    </div>
-    </div>
-    <div class="slider-productos">
-        <div class="slide-track">
-            <div class="slide">
-                <img src="./img/remeras mujer/remera1.webp" height="100" width="250" alt="">
-            </div>
-            <div class="slide">
-                <img src="./img/remeras mujer/remera2.webp" height="100" width="250" alt="">
-            </div>
-            <div class="slide">
-                <img src="./img/pantalon mujer/pantalon5.webp" height="100" width="250" alt="">
-            </div>
-            <div class="slide">
-                <img src="./img/pantalon mujer/pantalon7.webp" height="100" width="250" alt="">
-            </div>
-            <div class="slide">
-                <img src="./img/pantalon mujer/pantalon2.webp" height="100" width="250" alt="">
-            </div>
-            <div class="slide">
-                <img src="./img/remeras hombre/remera1.webp" height="100" width="250" alt="">
-            </div>
-            <div class="slide">
-                <img src="./img/remeras hombre/remera3.webp" height="100" width="250" alt="">
-            </div>
-            <div class="slide">
-                <img src="./img/remeras hombre/remera7.webp" height="100" width="250" alt="">
-            </div>
-            <div class="slide">
-                <img src="./img/pantalon hombre/pantalon1.webp" height="100" width="250" alt="">
-            </div>
-            <div class="slide">
-                <img src="./img/pantalon hombre/pantalon3.webp" height="100" width="250" alt="">
-            </div>
-            <div class="slide">
-                <img src="./img/pantalon hombre/pantalon7.webp" height="100" width="250" alt="">
-            </div>
-            <div class="slide">
-                <img src="./img/pantalon hombre/pantalon2.webp" height="100" width="250" alt="">
-            </div>
-            <div class="slide">
-                <img src="./img/pantalon hombre/pantalon6.webp" height="100" width="250" alt="">
-            </div>
-            <div class="slide">
-                <img src="./img/pantalon hombre/pantalon5.webp" height="100" width="250" alt="">
+            <div>
+                <ul id="productos" class="productos">
+                </ul>    
             </div>
         </div>
-    </div>
     </main>
-    <footer>   <!-- llamo al footer -->
+    <footer> <!-- llamo al footer -->
         <script>
-            $(function(){
+            $(function () {
                 $("#footer").load("footer.html");
             });
         </script>
         <!-- sin este div por alguna razon no se visualiza, supongo que hace que se muestre y por eso el #header de la funsion anterior -->
-       <div id="footer"></div>
+        <div id="footer"></div>
     </footer>
-   
-    <script>clickearFiltro()</script>
+
+    <script>clickearFiltro()</script> 
+    <script>mostrar()</script>
     <script>index()</script>
-   
+
 </body>
 
 </html>
