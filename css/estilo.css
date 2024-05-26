@@ -333,6 +333,70 @@ div#slider figure {
   background-color: #e95515;
 }
 
+ /*carousel final*/
+ @-webkit-keyframes scroll {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(calc(-250px * 7));
+            transform: translateX(calc(-250px * 7));
+  }
+}
+
+@keyframes scroll {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(calc(-250px * 7));
+            transform: translateX(calc(-250px * 7));
+  }
+}
+.slider-productos {
+  background: white;
+  height: 150px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 95%;
+}
+.slider-productos::before, .slider::after {/*linea difuminada*/
+  background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+  content: "";
+  height: 150px;
+  position: absolute;
+  width: 200px;
+  z-index: 2;
+}
+.slider-productos::after {
+  right: 0;
+  top: 0;
+  -webkit-transform: rotateZ(180deg);
+          transform: rotateZ(180deg);
+}
+.slider-productos::before {
+  left: 0;
+  top: 0;
+}
+.slider-productos .slide-track {
+  -webkit-animation: scroll 40s linear infinite;
+          animation: scroll 40s linear infinite;
+  display: flex;
+  width: calc(250px * 14);
+}
+.slider-productos .slide {
+  height: 50px;
+  width: 250px;
+}
+.slider-productos .slide img {
+  width: 100%;
+  height: auto; /* Mantiene la proporción de las imágenes */
+  object-fit: cover; /* Opcional: ajusta la forma en que las imágenes se adaptan a su contenedor */
+}
+
 footer{
     text-align: center;
     background: url(imagenes/bg.jpg);
