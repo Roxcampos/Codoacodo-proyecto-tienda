@@ -394,7 +394,7 @@ function actualizarCantidadProductos() {
     }
 }
 
-// Actualizar contenido del carrito
+// Función para actualizar el carrito
 function actualizarCarrito() {
     const carritoBody = document.querySelector("#carrito-body");
     const footer = document.querySelector("#tfooter");
@@ -415,15 +415,19 @@ function actualizarCarrito() {
         totalCarrito += precioTotal;
 
         carritoBody.innerHTML += `
-        <tr>
+        <tr data-id="${item.id}">
             <td>${item.nombre}</td>
-            <td>
-                <button class="cantidad-btn" data-id="${item.id}" data-action="decrement">-</button>
-                ${item.cantidad}
-                <button class="cantidad-btn" data-id="${item.id}" data-action="increment">+</button>
-            </td>
             <td>$${item.precio.toFixed(2)}</td>
             <td>$${precioTotal.toFixed(2)}</td>
+            <td>
+                <div class="btn-group">
+                    <button class="cantidad-btn" data-id="${item.id}" data-action="decrement">-</button>
+                    <span>${item.cantidad}</span>
+                    <button class="cantidad-btn" data-id="${item.id}" data-action="increment">+</button>
+                    <button class="eliminar-btn" data-id="${item.id}">Eliminar</button>
+                </div>
+            </td>
+           
         </tr>
         `;
     });
@@ -439,21 +443,26 @@ function actualizarCarrito() {
         button.addEventListener('click', event => {
             const productId = button.getAttribute('data-id');
             const action = button.getAttribute('data-action');
-            actualizarCantidad(carrito, productId, action);
+            actualizarCantidad(productId, action);
+        });
+    });
+
+    document.querySelectorAll('.eliminar-btn').forEach(button => {
+        button.addEventListener('click', event => {
+            const productId = button.getAttribute('data-id');
+            eliminarProducto(productId);
         });
     });
 }
 
 // Actualizar cantidad de un producto en el carrito
-function actualizarCantidad(carrito, productId, action) {
+function actualizarCantidad(productId, action) {
     const index = carrito.findIndex(p => p.id == productId);
     if (index !== -1) {
         if (action === 'increment') {
             carrito[index].cantidad += 1;
-            location.reload();
         } else if (action === 'decrement' && carrito[index].cantidad > 1) {
             carrito[index].cantidad -= 1;
-            location.reload();
         }
         sessionStorage.setItem('carrito', JSON.stringify(carrito));
         actualizarCantidadProductos();
@@ -461,8 +470,8 @@ function actualizarCantidad(carrito, productId, action) {
     }
 }
 
-// Eliminar producto del carrito
-function eliminarProducto(carrito, productId) {
+// Función para eliminar producto del carrito
+function eliminarProducto(productId) {
     const index = carrito.findIndex(p => p.id == productId);
     if (index !== -1) {
         carrito.splice(index, 1);
