@@ -1,6 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
-    actualizarCarrito();
+    actualizarCantidadProductos();
 });
+
+function actualizarCantidadProductos() {
+    const carrito = JSON.parse(sessionStorage.getItem('carrito')) || [];
+    const cantidadProductos = carrito.reduce((total, item) => total + item.cantidad, 0);
+    const cantidadProductosSpan = document.getElementById("cantidad-productos-carrito");
+    if (cantidadProductosSpan) {
+        cantidadProductosSpan.textContent = cantidadProductos;
+    } else {
+        console.error('No se encontró el span con id "cantidad-productos-carrito"');
+    }
+}
 
 function actualizarCarrito() {
     const carritoBody = document.querySelector("#carrito-body");
@@ -44,7 +55,7 @@ function actualizarCarrito() {
     totalPrice.textContent = `$${totalCarrito.toFixed(2)}`;
     totalRow.style.display = 'table-row';
 
-    actualizarCantidadProductos();
+    actualizarCantidadProductos(carrito);
 
     document.querySelectorAll('.cantidad-btn').forEach(button => {
         button.addEventListener('click', event => {
@@ -62,16 +73,6 @@ function actualizarCarrito() {
     });
 }
 
-function eliminarProducto(carrito, productId) {
-    const index = carrito.findIndex(p => p.id == productId);
-    if (index !== -1) {
-        carrito.splice(index, 1);
-        sessionStorage.setItem('carrito', JSON.stringify(carrito));
-        actualizarCantidadProductos();
-        actualizarCarrito();
-    }
-}
-
 function actualizarCantidad(carrito, productId, action) {
     const index = carrito.findIndex(p => p.id == productId);
     if (index !== -1) {
@@ -86,3 +87,12 @@ function actualizarCantidad(carrito, productId, action) {
     }
 }
 
+function eliminarProducto(carrito, productId) {
+    const index = carrito.findIndex(p => p.id == productId);
+    if (index !== -1) {
+        carrito.splice(index, 1);
+        sessionStorage.setItem('carrito', JSON.stringify(carrito));
+        actualizarCantidadProductos();
+        actualizarCarrito();
+    }
+}
