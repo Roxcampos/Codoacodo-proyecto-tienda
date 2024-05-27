@@ -417,8 +417,7 @@ function actualizarCarrito() {
         carritoBody.innerHTML += `
         <tr data-id="${item.id}">
             <td>${item.nombre}</td>
-            <td>$${item.precio.toFixed(2)}</td>
-            <td>$${precioTotal.toFixed(2)}</td>
+            
             <td>
                 <div class="btn-group">
                     <button class="cantidad-btn" data-id="${item.id}" data-action="decrement">-</button>
@@ -427,7 +426,8 @@ function actualizarCarrito() {
                     <button class="eliminar-btn" data-id="${item.id}">Eliminar</button>
                 </div>
             </td>
-           
+            <td>$${item.precio.toFixed(2)}</td>
+            <td>$${precioTotal.toFixed(2)}</td>
         </tr>
         `;
     });
@@ -487,3 +487,9 @@ document.addEventListener('DOMContentLoaded', () => {
         actualizarCarrito();
     }
 });
+
+//Funcion para volver a prodcutos cuando hago click en Continuar comprando
+document.getElementById('continuar-comprando').addEventListener('click', function() {
+    window.location.href = 'productos.html';
+  });
+  

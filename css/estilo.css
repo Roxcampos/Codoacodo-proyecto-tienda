@@ -850,3 +850,46 @@ td,th{
   font-weight: bold;
   background-color: #f1f1f1;
 }
+
+.botones-acciones {
+    margin-top: 20px;
+    display: flex;
+  justify-content: center;
+  }
+  
+  .btn-accion {
+    padding: 10px 20px;
+    background-color: #f36159;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0 5px; /* Ajusta el margen entre los botones */
+  }
+  
+  .btn-accion:hover {
+    background-color: #e51313;
+  }
+  
+}
+
+.btn-accion {
+  padding: 10px 20px;
+  background-color: #f36159;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.btn-accion:hover {
+  background-color: #e51313;
+}
