@@ -316,7 +316,7 @@ div#slider figure {
 }
 .btn-carrito {
   position: absolute; /* Cambiamos a posición absoluta */
-  bottom: 8px; /* Alineamos el botón en la parte inferior */
+  bottom: 4px; /* Alineamos el botón en la parte inferior */
   left: 50%; /* Lo movemos al 50% del lado izquierdo */
   transform: translateX(-50%); /* Alineamos el botón horizontalmente */
   width: 80%; /* Ancho ajustado para el botón */
