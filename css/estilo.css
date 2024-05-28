@@ -686,8 +686,23 @@ td,th{
 [class*="col-"] { /*a todas las clases que comiencen con col- ponele 100%*/
     width: 100%;
   }
+@media (max-width: 450px){
+.encabezado{
+  font-size: 14px;
+}
+.nav li a {
+  font-size: 14px;
+}
+.productos{
+  width: 90%;
+  margin: 0 auto;
+  padding: 3px;
+}
+
+
+}
   
-  @media only screen and (min-width: 600px) { /* entonces >= 600px  */
+  @media only screen and (min-width: 450px) { /* entonces >= 600px  */
     /* For tablets: */
     .col-s-1 {width: 8.33%;}  /* 100/12  */
     .col-s-2 {width: 16.66%;}   /* 100/12*2  */
@@ -875,7 +890,7 @@ td,th{
     background-color: #e51313;
   }
   
-}
+
 
 .btn-accion {
   padding: 10px 20px;
