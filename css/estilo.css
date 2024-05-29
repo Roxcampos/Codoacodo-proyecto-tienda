@@ -177,10 +177,10 @@ display: flex;
 }
 
 .search-input {
-  height: 80px; /* Ajuste de altura para que el campo de entrada sea visible */
+  height: 50px; /* Ajuste de altura para que el campo de entrada sea visible */
   border: none;
   position: absolute;
-  left: 0;
+  left: -230px; /* Ajuste de posición para que el campo de entrada esté a la izquierda del icono */
   visibility: hidden;
   opacity: 0;
   top: 40px;
@@ -189,7 +189,7 @@ display: flex;
   padding: 5px;
   font-size: 14px;
   outline: none;
-  width: 250px;
+  width: 150px;
   transition: 0.2s all ease-in;
   border-bottom: 3px;
   box-shadow: none;
@@ -215,6 +215,7 @@ display: flex;
   z-index: 9 !important;
   box-shadow: 1px 3px 4px #E6E6E6;
   height: 30px !important;
+  left: -130px; /* Ajuste de posición cuando el campo de entrada se muestra */
 }
 
 
@@ -235,13 +236,6 @@ display: flex;
   display: flex;
   align-items: center;
   justify-content: end;
-}
-.buscador{
-  height: 50px;
-  display: flex;
-  align-items: center;
-justify-content: center;
-margin-bottom:15px ;
 }
 
 .contenedor-banner {
