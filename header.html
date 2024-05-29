@@ -47,14 +47,19 @@
                         </ul>
                     </li>
                     <li><a href="contacto.html">Contacto</a></li>
-                    <li><a href="#"><span class="fa fa-search show_search no_link"></span></a></li>
+                    <li class="buscador-container">
+                        <div class="search">
+                            <div class="search-content">
+                                <button class="search-button">
+                                    <i class="fa fa-search show_search no_link"></i>
+                                </button>
+                                <input type="text" class="search-input" placeholder="Buscar aquí...">
+                            </div>
+                        </div>
+                    </li>
                 </ul>
+                
             </div>
-            <div class="buscador col-12 col-s-12">
-
-              
-                 
-                </div>
             </div>
         </div>
     </nav>
@@ -64,6 +69,8 @@
 <script src="./js/productos.js"></script>
 
 <script>clickearFiltro()</script>
-<script>actualizarCantidadProductos();</script>
+
+<script>actualizarCantidadProductos()</script>
+
 
 
