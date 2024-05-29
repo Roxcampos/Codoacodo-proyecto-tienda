@@ -163,39 +163,60 @@ display: flex;
     display: block;
 }
 
-.search-container {
-    display: flex;
-    align-items: center;
-    padding: 15px;
-    width: 15%;
-    float: right;
+/* Estilo base para el contenedor de búsqueda */
+.buscador-container {
+  position: relative;
+  padding-bottom: 20px;
+  bottom: -7px;
 }
 
-.search-container form {
-    display: flex;
-    align-items: center;
+/* Estilo para el campo de entrada de búsqueda */
+.search-input::placeholder {
+  color: white;
+  opacity: 0.8;
 }
 
-.search-container input[type="text"] {
-    padding: 5px;
-    margin-right: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    min-width: 200px ;
+.search-input {
+  height: 80px; /* Ajuste de altura para que el campo de entrada sea visible */
+  border: none;
+  position: absolute;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  top: 40px;
+  background: #ef822f;
+  color: rgb(12, 0, 0);
+  padding: 5px;
+  font-size: 14px;
+  outline: none;
+  width: 250px;
+  transition: 0.2s all ease-in;
+  border-bottom: 3px;
+  box-shadow: none;
+  z-index: -1;
 }
 
-.search-container button {
-    padding: 10px 20px;
-    background-color: #e7b268;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+/* Estilo para el botón de búsqueda */
+.search-button {
+  background: transparent;
+  color: rgb(13, 1, 1);
+  cursor: pointer;
+  font-size: 14px;
+  padding-top: 4px;
+  border: none; /* Asegúrate de que no haya borde en el botón */
 }
 
-.search-container button:hover {
-    background-color: #d66310;
+/* Mostrar el campo de entrada de búsqueda al hacer clic en el botón */
+.search-button:hover + .search-input, 
+.search-input:hover, 
+.search:hover .search-input {
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 9 !important;
+  box-shadow: 1px 3px 4px #E6E6E6;
+  height: 30px !important;
 }
+
 
 .carrito {
   padding-right: 8px;

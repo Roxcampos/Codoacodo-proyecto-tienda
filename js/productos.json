@@ -462,7 +462,7 @@
     {
         "id": 51,
         "imagen":"../img/remeras%20hombre/remera10.webp",
-        "nombre":"remera manga larga",
+        "nombre":"remera manga larga blanca",
         "genero":"hombre",
         "precio": 39000,
         "categoria":"remera"
@@ -471,7 +471,7 @@
     {
         "id": 52,
         "imagen":"../img/remeras%20hombre/remera11.webp",
-        "nombre":"remera manga larga",
+        "nombre":"remera manga larga negra",
         "genero":"hombre",
         "precio": 39000,
         "categoria":"remera"
