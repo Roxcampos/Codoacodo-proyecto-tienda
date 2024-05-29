@@ -137,3 +137,7 @@ function index() {
 }
 
 
+function toggleMenu() {
+    const filtro = document.getElementById('filtro');
+    filtro.classList.toggle('active');
+}
