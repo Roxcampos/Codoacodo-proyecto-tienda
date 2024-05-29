@@ -426,14 +426,19 @@ footer{
 /*FORMULARIO CONTACTO*/
 .caja-contacto{
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content:left;
+  align-content: flex-start;
+  min-width: 600px;
 }
+
 .form-contacto{
   width: 80%; /* Ocupa el 40% del ancho total */
   padding: 20px; /* Espaciado interno */
 }
+
 form{
-    margin: 40px 10px;
+  margin: 40px 1px;
 }
 
 
@@ -447,7 +452,7 @@ form label, form legend{
     display: block;
     margin: 0 0 20px;
     padding: 10px 25px;
-    width: 50%;
+    width: 80%;
 }
 
 .checkbox{
@@ -490,7 +495,7 @@ td,th{
 }
 .mapa-tienda{
   width: 80%; /* Ocupa el 40% del ancho total */
-  padding: 20px; /* Espaciado interno */
+  padding: 10px; /* Espaciado interno */
 }
 /* Estilos adicionales */
 .titulo-principal {
@@ -695,7 +700,7 @@ td,th{
   }
   [class*="col-"] { /*a todas las clases que comiencen con "col- dale este estilo*/
     float: left;
-    padding: 15px;
+    padding: 10px;
   }
   /*filtro*/
   .filtro{
@@ -870,7 +875,7 @@ td,th{
 [class*="col-"] { /*a todas las clases que comiencen con col- ponele 100%*/
   width: 100%;
 }
-@media (max-width: 450px){
+@media (max-width: 600px){
 .encabezado{
 font-size: 14px;
 }
@@ -918,6 +923,9 @@ padding: 3px;
 }
 
 /**************************************************/
+.caja-contacto{
+  display: flex;
+}
 .filtro {
   display: flex;
   flex-direction: row;
