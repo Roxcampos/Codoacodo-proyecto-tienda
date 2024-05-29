@@ -4,6 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos - Tienda KappaCode</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/estilo.css">
@@ -33,25 +34,33 @@
         <!-- main mostramos tarjetas de productos -->
     </header>
     <main>
+        <button class="hamburger" onclick="toggleMenu()">☰ Filtro</button>
         <div id="filtro" class="filtro">
             <label for="precio">Precio: </label>
-
             <input type="number" onchange="guardarPrecio(this.value)" placeholder="0">
+            <div>
+            <p class="centrado">Tipo prenda</p>
             <select id="tipoPrenda" onchange="guardarCategoria(this.value)">
                 <option value="all">Todo</option>
                 <option value="remera">Remera</option>
                 <option value="pantalon">Pantalon</option>
             </select>
+            </div>
+            <div>
+            <p class="centrado">genero</p>
             <select id="genero" onchange="guardarGenero(this.value)">
                 <option value="all">Todo</option>
                 <option value="mujer">Mujer</option>
                 <option value="hombre">Hombre</option>
             </select>
-        
+            </div>
+            <div>
+                <p class="centrado">orden</p>
             <select id="orden" onchange="guardarOrden(this.value)">
                 <option value="Ascendente">Ascendente</option>
                 <option value="Descendente">Descendente</option>
             </select>
+            </div>
             <button class="filtrar" onclick="mostrar()">Aplicar filtro</button>
         </div>
 
