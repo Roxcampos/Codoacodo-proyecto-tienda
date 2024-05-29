@@ -374,7 +374,7 @@ function agregarProductoAlCarrito(producto) {
     sessionStorage.setItem('carrito', JSON.stringify(carrito));
     actualizarCantidadProductos();
     actualizarCarrito();
-    location.reload();
+    //location.reload();
 }
 
 // Actualizar cantidad de productos en el carrito
