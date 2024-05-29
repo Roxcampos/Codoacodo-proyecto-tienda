@@ -65,6 +65,69 @@
     },
     {
         "id": 7,
+        "imagen":"../img/pantalon%20hombre/pantalon8.webp",
+        "nombre":"pantalon cargo tostado",
+        "genero":"hombre",
+        "precio": 68500,
+        "categoria":"pantalon"
+
+    },
+    {
+        "id": 8,
+        "imagen":"../img/pantalon%20hombre/pantalon9.webp",
+        "nombre":"pantalon babucha negro",
+        "genero":"hombre",
+        "precio": 55000,
+        "categoria":"pantalon"
+
+    },
+    {
+        "id": 9,
+        "imagen":"../img/pantalon%20hombre/pantalon10.webp",
+        "nombre":"pantalon gabardina verde",
+        "genero":"hombre",
+        "precio": 108000,
+        "categoria":"pantalon"
+
+    },
+    {
+        "id": 10,
+        "imagen":"../img/pantalon%20hombre/pantalon11.webp",
+        "nombre":"pantalon jean azul",
+        "genero":"hombre",
+        "precio": 80000,
+        "categoria":"pantalon"
+
+    },
+    {
+        "id": 11,
+        "imagen":"../img/pantalon%20hombre/pantalon12.webp",
+        "nombre":"pantalon jean azul",
+        "genero":"hombre",
+        "precio": 69000,
+        "categoria":"pantalon"
+
+    },
+    {
+        "id": 12,
+        "imagen":"../img/pantalon%20hombre/pantalon13.webp",
+        "nombre":"pantalon jean verde",
+        "genero":"hombre",
+        "precio": 75000,
+        "categoria":"pantalon"
+
+    },
+    {
+        "id": 13,
+        "imagen":"../img/pantalon%20hombre/pantalon13.webp",
+        "nombre":"pantalon jean azul",
+        "genero":"hombre",
+        "precio": 74000,
+        "categoria":"pantalon"
+
+    },
+    {
+        "id": 14,
         "imagen":"../img/pantalon%20mujer/pantalon1.webp",
         "nombre":"pantalon jean negro",
         "genero":"mujer",
@@ -73,7 +136,7 @@
 
     },
     {
-        "id": 8,
+        "id": 15,
         "imagen":"../img/pantalon%20mujer/pantalon2.webp",
         "nombre":"pantalon jean azul",
         "genero":"mujer",
@@ -82,7 +145,7 @@
 
     },
     {
-        "id": 9,
+        "id": 16,
         "imagen":"../img/pantalon%20mujer/pantalon3.webp",
         "nombre":"pantalon jean gris oscuro",
         "genero":"mujer",
@@ -91,7 +154,7 @@
 
     },
     {
-        "id": 10,
+        "id": 17,
         "imagen":"../img/pantalon%20mujer/pantalon4.webp",
         "nombre":"pantalon jean azul",
         "genero":"mujer",
@@ -100,7 +163,7 @@
 
     },
     {
-        "id": 11,
+        "id": 18,
         "imagen":"../img/pantalon%20mujer/pantalon5.webp",
         "nombre":"pantalon jean gris claro",
         "genero":"mujer",
@@ -109,7 +172,7 @@
 
     },
     {
-        "id": 12,
+        "id": 19,
         "imagen":"../img/pantalon%20mujer/pantalon6.webp",
         "nombre":"pantalon jean negro",
         "genero":"mujer",
@@ -118,16 +181,79 @@
 
     },
     {
-        "id": 13,
+        "id": 20,
         "imagen":"../img/pantalon%20mujer/pantalon7.webp",
-        "nombre":"pantalon jean azul",
+        "nombre":"pantalon cargo azul",
         "genero":"mujer",
-        "precio": 66000,
+        "precio": 65000,
         "categoria":"pantalon"
 
     },
     {
-        "id": 14,
+        "id": 21,
+        "imagen":"../img/pantalon%20mujer/pantalon8.webp",
+        "nombre":"pantalon oxford azul",
+        "genero":"mujer",
+        "precio": 72000,
+        "categoria":"pantalon"
+
+    },
+    {
+        "id": 22,
+        "imagen":"../img/pantalon%20mujer/pantalon9.webp",
+        "nombre":"pantalon jean azul",
+        "genero":"mujer",
+        "precio": 68000,
+        "categoria":"pantalon"
+
+    },
+    {
+        "id": 23,
+        "imagen":"../img/pantalon%20mujer/pantalon10.webp",
+        "nombre":"pantalon jean recto",
+        "genero":"mujer",
+        "precio": 75900,
+        "categoria":"pantalon"
+
+    },
+    {
+        "id": 24,
+        "imagen":"../img/pantalon%20mujer/pantalon11.webp",
+        "nombre":"pantalon silver",
+        "genero":"mujer",
+        "precio": 105000,
+        "categoria":"pantalon"
+
+    },
+    {
+        "id": 25,
+        "imagen":"../img/pantalon%20mujer/pantalon12.webp",
+        "nombre":"pantalon sastrero negro",
+        "genero":"mujer",
+        "precio": 75500,
+        "categoria":"pantalon"
+
+    },
+    {
+        "id": 26,
+        "imagen":"../img/pantalon%20mujer/pantalon13.webp",
+        "nombre":"pantalon babucha negro",
+        "genero":"mujer",
+        "precio": 95000,
+        "categoria":"pantalon"
+
+    },
+    {
+        "id": 27,
+        "imagen":"../img/pantalon%20mujer/pantalon14.webp",
+        "nombre":"pantalon gabardina rojo",
+        "genero":"mujer",
+        "precio": 30000,
+        "categoria":"pantalon"
+
+    },
+    {
+        "id": 28,
         "imagen":"../img/remeras%20mujer/remera1.webp",
         "nombre":"remera algodon verde",
         "genero":"mujer",
@@ -136,7 +262,7 @@
 
     },
     {
-        "id": 15,
+        "id": 29,
         "imagen":"../img/remeras%20mujer/remera2.webp",
         "nombre":"remera algodon negra",
         "genero":"mujer",
@@ -145,7 +271,7 @@
 
     },
     {
-        "id": 16,
+        "id": 30,
         "imagen":"../img/remeras%20mujer/remera3.webp",
         "nombre":"remera algodon blanca",
         "genero":"mujer",
@@ -154,7 +280,7 @@
 
     },
     {
-        "id": 17,
+        "id": 31,
         "imagen":"../img/remeras%20mujer/remera4.webp",
         "nombre":"remera blanca dibujo",
         "genero":"mujer",
@@ -163,7 +289,7 @@
 
     },
     {
-        "id": 18,
+        "id": 32,
         "imagen":"../img/remeras%20mujer/remera5.webp",
         "nombre":"remera roja lisa",
         "genero":"mujer",
@@ -172,7 +298,7 @@
 
     },
     {
-        "id": 19,
+        "id": 33,
         "imagen":"../img/remeras%20mujer/remera6.webp",
         "nombre":"remera brillosa gris",
         "genero":"mujer",
@@ -181,7 +307,7 @@
 
     },
     {
-        "id": 20,
+        "id": 34,
         "imagen":"../img/remeras%20mujer/remera7.webp",
         "nombre":"remera deportiva",
         "genero":"mujer",
@@ -190,7 +316,70 @@
 
     },
     {
-        "id": 21,
+        "id": 35,
+        "imagen":"../img/remeras%20mujer/remera8.webp",
+        "nombre":"remera manga larga",
+        "genero":"mujer",
+        "precio": 25000,
+        "categoria":"remera"
+
+    },
+    {
+        "id": 36,
+        "imagen":"../img/remeras%20mujer/remera9.webp",
+        "nombre":"remera blanca estampada",
+        "genero":"mujer",
+        "precio": 27000,
+        "categoria":"remera"
+
+    },
+    {
+        "id": 37,
+        "imagen":"../img/remeras%20mujer/remera10.webp",
+        "nombre":"remera manga larga",
+        "genero":"mujer",
+        "precio": 23000,
+        "categoria":"remera"
+
+    },
+    {
+        "id": 38,
+        "imagen":"../img/remeras%20mujer/remera11.webp",
+        "nombre":"remera deportiva",
+        "genero":"mujer",
+        "precio": 19000,
+        "categoria":"remera"
+
+    },
+    {
+        "id": 39,
+        "imagen":"../img/remeras%20mujer/remera12.webp",
+        "nombre":"remera beige",
+        "genero":"mujer",
+        "precio": 15000,
+        "categoria":"remera"
+
+    },
+    {
+        "id": 40,
+        "imagen":"../img/remeras%20mujer/remera13.webp",
+        "nombre":"remera manga larga",
+        "genero":"mujer",
+        "precio": 23000,
+        "categoria":"remera"
+
+    },
+    {
+        "id": 41,
+        "imagen":"../img/remeras%20mujer/remera14.webp",
+        "nombre":"remera manga larga",
+        "genero":"mujer",
+        "precio": 24000,
+        "categoria":"remera"
+
+    },
+    {
+        "id": 42,
         "imagen":"../img/remeras%20hombre/remera1.webp",
         "nombre":"remera manga larga verde",
         "genero":"hombre",
@@ -199,7 +388,7 @@
 
     },
     {
-        "id": 22,
+        "id": 43,
         "imagen":"../img/remeras%20hombre/remera2.webp",
         "nombre":"remera algodon azul",
         "genero":"hombre",
@@ -208,7 +397,7 @@
 
     },
     {
-        "id": 23,
+        "id": 44,
         "imagen":"../img/remeras%20hombre/remera3.webp",
         "nombre":"remera negra malvinas",
         "genero":"hombre",
@@ -217,7 +406,7 @@
 
     },
     {
-        "id": 24,
+        "id": 45,
         "imagen":"../img/remeras%20hombre/remera4.webp",
         "nombre":"remera negra hercules",
         "genero":"hombre",
@@ -226,7 +415,7 @@
 
     },
     {
-        "id": 25,
+        "id": 46,
         "imagen":"../img/remeras%20hombre/remera5.webp",
         "nombre":"remera lisa negra",
         "genero":"hombre",
@@ -235,7 +424,7 @@
 
     },
     {
-        "id": 26,
+        "id": 47,
         "imagen":"../img/remeras%20hombre/remera6.webp",
         "nombre":"remera lisa azul",
         "genero":"hombre",
@@ -244,11 +433,74 @@
 
     },
     {
-        "id": 27,
+        "id": 48,
         "imagen":"../img/remeras%20hombre/remera7.webp",
         "nombre":"remera estampada blanca",
         "genero":"hombre",
         "precio": 35000,
+        "categoria":"remera"
+
+    },
+    {
+        "id": 49,
+        "imagen":"../img/remeras%20hombre/remera8.webp",
+        "nombre":"remera chomba azul",
+        "genero":"hombre",
+        "precio": 35000,
+        "categoria":"remera"
+
+    },
+    {
+        "id": 50,
+        "imagen":"../img/remeras%20hombre/remera9.webp",
+        "nombre":"remera chomba verde",
+        "genero":"hombre",
+        "precio": 38000,
+        "categoria":"remera"
+
+    },
+    {
+        "id": 51,
+        "imagen":"../img/remeras%20hombre/remera10.webp",
+        "nombre":"remera manga larga",
+        "genero":"hombre",
+        "precio": 39000,
+        "categoria":"remera"
+
+    },
+    {
+        "id": 52,
+        "imagen":"../img/remeras%20hombre/remera11.webp",
+        "nombre":"remera manga larga",
+        "genero":"hombre",
+        "precio": 39000,
+        "categoria":"remera"
+
+    },
+    {
+        "id": 53,
+        "imagen":"../img/remeras%20hombre/remera12.webp",
+        "nombre":"remera estampada rosa",
+        "genero":"hombre",
+        "precio": 29000,
+        "categoria":"remera"
+
+    },
+    {
+        "id": 54,
+        "imagen":"../img/remeras%20hombre/remera13.webp",
+        "nombre":"remera estampada marron",
+        "genero":"hombre",
+        "precio": 28500,
+        "categoria":"remera"
+
+    },
+    {
+        "id": 55,
+        "imagen":"../img/remeras%20hombre/remera14.webp",
+        "nombre":"remera estampada negra",
+        "genero":"hombre",
+        "precio": 28700,
         "categoria":"remera"
 
     }
