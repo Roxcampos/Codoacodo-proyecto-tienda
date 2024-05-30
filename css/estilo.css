@@ -289,7 +289,7 @@ div#slider figure {
 }
 
 .imagen{
-    width: 200px;
+    width: 250px;
 
 object-fit: cover;
 }
@@ -297,12 +297,11 @@ object-fit: cover;
 .productos li {
   display: inline-block;
   text-align: center;
-  min- width: 400px; /* Ancho ajustado para tres tarjetas por fila */
   vertical-align: top;
   margin: 1.5% 1.5%;
   padding: 30px 20px;
   box-sizing: border-box;
-  border: 2px solid #000000;
+  border: 2px solid #aba7a7;
   border-radius: 10px;
   min-width: 380px;
   position: relative; /* Agregamos posición relativa */
@@ -343,12 +342,13 @@ object-fit: cover;
   transform: translateX(-50%); /* Alineamos el botón horizontalmente */
   width: 80%; /* Ancho ajustado para el botón */
   background-color: #e17510;
-  border-radius: 24px;
+  border-radius: 20px;
   font-family: "Inter";
   font-size: 14px;
   line-height: 20px;
   text-align: center;
   color: #fff;
+  border: none;
 }
 
 .btn-carrito:hover {
