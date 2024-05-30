@@ -296,7 +296,7 @@ div#slider figure {
 .productos li {
   display: inline-block;
   text-align: center;
-  width: calc(30% - 30px); /* Ancho ajustado para tres tarjetas por fila */
+  min- width: 400px; /* Ancho ajustado para tres tarjetas por fila */
   vertical-align: top;
   margin: 1.5% 1.5%;
   padding: 30px 20px;
@@ -444,12 +444,12 @@ footer{
   flex-wrap: wrap;
   justify-content:left;
   align-content: flex-start;
-  min-width: 600px;
 }
 
 .form-contacto{
-  width: 80%; /* Ocupa el 40% del ancho total */
+  width: 100%; /* Ocupa el 40% del ancho total */
   padding: 20px; /* Espaciado interno */
+  min-width: 450px;
 }
 
 form{
@@ -476,7 +476,7 @@ form label, form legend{
 }
 
 .enviar{
-    width: 30%;
+    width: 200px;
     padding: 15px 0;
     font-size: 18px;
     font-weight: bold;
@@ -514,9 +514,10 @@ font-weight: bold;
 }
 .empresa p{
   text-align: justify;
+  padding: 10px 10px;
 }
 .mapa-tienda{
-  width: 80%; /* Ocupa el 40% del ancho total */
+  width: 100%; 
   padding: 10px; /* Espaciado interno */
 }
 /* Estilos adicionales */
@@ -729,6 +730,7 @@ font-weight: bold;
     display: flex;
     padding: 5px;
     align-items: flex-start ;
+
   }
   .filtro label{
     font-size: 20px;
@@ -970,7 +972,7 @@ padding: 3px;
 }
 
 /* Estilos específicos para dispositivos móviles */
-@media (max-width: 450px) {
+@media (max-width: 600px) {
   .hamburger {
       display: block;
   }
