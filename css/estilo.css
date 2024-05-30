@@ -542,6 +542,7 @@ font-weight: bold;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-transform: uppercase;
   }
   li{
     text-align: left;
