@@ -291,12 +291,13 @@ div#slider figure {
 .imagen{
     width: 200px;
     height: 280px;
+    object-fit: cover;
 }
 
 .productos li {
   display: inline-block;
   text-align: center;
-  min- width: 400px; /* Ancho ajustado para tres tarjetas por fila */
+  width: 400px; /* Ancho ajustado para tres tarjetas por fila */
   vertical-align: top;
   margin: 1.5% 1.5%;
   padding: 30px 20px;
