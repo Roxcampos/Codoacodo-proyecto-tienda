@@ -289,6 +289,9 @@ div#slider figure {
 }
 
 .imagen{
+    width: 250px;
+
+object-fit: cover;
     width: 200px;
     height: 280px;
     object-fit: cover;
@@ -297,12 +300,11 @@ div#slider figure {
 .productos li {
   display: inline-block;
   text-align: center;
-  width: 400px; /* Ancho ajustado para tres tarjetas por fila */
   vertical-align: top;
   margin: 1.5% 1.5%;
   padding: 30px 20px;
   box-sizing: border-box;
-  border: 2px solid #000000;
+  border: 2px solid #aba7a7;
   border-radius: 10px;
   min-width: 380px;
   position: relative; /* Agregamos posición relativa */
@@ -343,12 +345,13 @@ div#slider figure {
   transform: translateX(-50%); /* Alineamos el botón horizontalmente */
   width: 80%; /* Ancho ajustado para el botón */
   background-color: #e17510;
-  border-radius: 24px;
+  border-radius: 20px;
   font-family: "Inter";
   font-size: 14px;
   line-height: 20px;
   text-align: center;
   color: #fff;
+  border: none;
 }
 
 .btn-carrito:hover {
@@ -535,14 +538,14 @@ font-weight: bold;
   width: 100%; /* El mapa ocupa el 100% del contenedor */
   height: 300px; /* Altura fija */
 }
-  /*Registro*/
+  /*Login*/
   .container{
     height: 100%;
-    text-transform: uppercase;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-transform: uppercase;
   }
   li{
     text-align: left;
@@ -556,7 +559,7 @@ font-weight: bold;
   .form-background{
     background: #fff;
     width: 420px;
-    border-radius: 10px;
+    border-radius: 20px;
     padding: 32px;
     align-self: center;
   -webkit-box-shadow: 0px 15px 88px -37px rgba(0,0,0,0.17);
@@ -653,11 +656,11 @@ font-weight: bold;
 /*FORMULARIO REGISTRO*/
 .form-register {
     width: 400px;
-    background: #f63d2c;
+    background: #f6792c;
     padding: 30px;
     margin: auto;
     margin-top: 100px;
-    border-radius: 4px;
+    border-radius: 20px;
     font-family: 'calibri';
     color: white;
     font-family: "Montserrat", sans-serif;
@@ -700,7 +703,7 @@ font-weight: bold;
   
   .form-register .botons {
     width: 100%;
-    background: #eac017;
+    background: #f25e14;
     border: none;
     padding: 12px;
     color: rgb(22, 22, 22);
