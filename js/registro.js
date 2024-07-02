@@ -48,14 +48,42 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // Si todo está correcto, se puede proceder a enviar el formulario o hacer alguna otra acción
-      
-        formulario.submit(); // Descomentar esta línea para permitir el envío del formulario
+        // Si todo está correcto, se puede proceder a enviar los datos al servidor
+        const data = {
+            usuario: usuario,
+            nombres: nombres,
+            apellidos: apellidos,
+            correo: email,
+            contrasena: contrasena,
+            rol: 'cliente'  // Ajusta esto según lo necesario
+        };
+        
+        fetch('http://tiendakappacode.pythonanywhere.com/usuarios', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                window.location.href = 'login.html';
+            } else {
+                mensajeError.textContent = data.message;
+            }
+        })
+        .catch(error => {
+            mensajeError.textContent = "Ocurrió un error al registrar el usuario.";
+            console.error('Error:', error);
+        });
     });
+
     function validarUsuario(texto) {
         // Verifica que el texto no esté vacío y contenga solo letras (mayúsculas y minúsculas) o números
         return /^[a-zA-Z0-9]+$/.test(texto.trim());
     }
+
     function validarNombreApellido(texto) {
         return /^[a-zA-Z\s]+$/.test(texto.trim());
     }
@@ -66,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function validarContrasena(contrasena) {
-        const re = /^(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+        const re = /^(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{4,}$/;
         return re.test(contrasena);
     }
 });
