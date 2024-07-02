@@ -12,19 +12,19 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="./js/productos.js"></script>
-  
+
 </head>
 
 <body>
     <header><!-- llamo al header -->
         <script>
-         $(function(){
-             $("#header").load("header.html");
-         });
-     </script>
-     <!-- sin este div por alguna razon no se visualiza, supongo que hace que se muestre y por eso el #header de la funsion anterior -->
-    <div id="header"></div>
- <!-- Claro, desglosemos paso a paso lo que hace ese código:
+            $(function () {
+                $("#header").load("header.html");
+            });
+        </script>
+        <!-- sin este div por alguna razon no se visualiza, supongo que hace que se muestre y por eso el #header de la funsion anterior -->
+        <div id="header"></div>
+        <!-- Claro, desglosemos paso a paso lo que hace ese código:
  
  1- <script>: Esta etiqueta HTML se utiliza para incluir código JavaScript en la página.
  2- $(function(){ ... }): Esto es una abreviatura de $(document).ready(function(){ ... }). Es una función de jQuery que se ejecuta cuando el documento HTML está completamente cargado y listo para manipularse.
@@ -32,38 +32,41 @@
     · $("#header"): Esto selecciona el elemento con el id "header". Es decir, busca un elemento en el HTML con el atributo id igual a "header".
     · .load("header.html"): Este método de jQuery carga el contenido de un archivo HTML (en este caso, "header.html") y lo inserta dentro del elemento seleccionado. En este caso, insertará el contenido de "header.html" dentro del elemento con el id "header".
  4- <div id="header"></div>: Este es el contenedor en el HTML donde se cargará el contenido del encabezado. Es un div con el id "header". -->
- <!-- main mostramos tarjetas de productos -->
- </header>   
-    
+        <!-- main mostramos tarjetas de productos -->
+    </header>
+
     <main>
-  
+
         <section class="form-register">
             <h4>FORMULARIO DE REGISTRO</h4>
             <form id="formulario-registro">
-                <input class="controls" type="text" name="usuario" id="usuario" placeholder="Ingrese un nombre de usuario">
+                <input class="controls" type="text" name="usuario" id="usuario"
+                    placeholder="Ingrese un nombre de usuario">
                 <input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese su Nombre">
                 <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Ingrese su Apellido">
                 <input class="controls" type="text" name="correo" id="correo" placeholder="Ingrese su Correo">
-                <input class="controls" type="password" name="contrasena" id="contrasena" placeholder="Ingrese su Contraseña">
-                <label class="checkbox"><input type="checkbox" id="terminos" checked>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></label>
+                <input class="controls" type="password" name="contrasena" id="contrasena"
+                    placeholder="Ingrese su Contraseña">
+                <label class="checkbox"><input type="checkbox" id="terminos" checked>Estoy de acuerdo con <a
+                        href="#">Terminos y Condiciones</a></label>
                 <input class="botons" type="submit" value="Registrar">
                 <p id="mensajeError" style="font-size: 9px;"></p>
             </form>
 
             <p><a href="login.html">¿Ya tengo Cuenta?</a></p>
         </section>
-    
+
     </main>
-    <footer>   <!-- llamo al footer -->
+    <footer> <!-- llamo al footer -->
         <script>
-            $(function(){
+            $(function () {
                 $("#footer").load("footer.html");
             });
         </script>
         <!-- sin este div por alguna razon no se visualiza, supongo que hace que se muestre y por eso el #header de la funsion anterior -->
-       <div id="footer"></div>
+        <div id="footer"></div>
     </footer>
-   
+
     <script src="./js/registro.js"></script>
 </body>
 
