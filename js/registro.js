@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
             rol: 'cliente'  // Ajusta esto según lo necesario
         };
         
-        fetch('http://tiendakappacode.pythonanywhere.com/usuarios', {
+        fetch('https://tiendakappacode.pythonanywhere.com/usuarios', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
