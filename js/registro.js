@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     formulario.addEventListener('submit', function (evento) {
         evento.preventDefault(); // Previene el envío del formulario para poder validarlo con Javascript
-        
+
         let usuario = document.getElementById('usuario').value;
         let nombres = document.getElementById('nombres').value;
         let apellidos = document.getElementById('apellidos').value;
@@ -14,15 +14,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Validación de los campos
         if (!validarUsuario(usuario)) {
-           alert('El campo nombre de usuario no puede estar vacío.');
+            alert('El campo nombre de usuario no puede estar vacío.');
             return;
         }
-        
+
         if (!validarNombreApellido(nombres)) {
             alert('El campo nombre no puede estar vacío y debe contener solo letras.');
             return;
         }
-        
+
         if (!validarNombreApellido(apellidos)) {
             alert('El campo apellido no puede estar vacío y debe contener solo letras.');
             return;
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
             contrasena: contrasena,
             rol: 'cliente'  // Ajusta esto según lo necesario
         };
-        
+
         fetch('https://tiendakappacode.pythonanywhere.com/usuarios', {
             method: 'POST',
             headers: {
@@ -65,18 +65,18 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             body: JSON.stringify(data)
         })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                window.location.href = 'login.html';
-            } else {
-                mensajeError.textContent = data.message;
-            }
-        })
-        .catch(error => {
-            mensajeError.textContent = "Ocurrió un error al registrar el usuario.";
-            console.error('Error:', error);
-        });
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    window.location.href = 'login.html';
+                } else {
+                    mensajeError.textContent = data.message;
+                }
+            })
+            .catch(error => {
+                mensajeError.textContent = "Ocurrió un error al registrar el usuario.";
+                console.error('Error:', error);
+            });
     });
 
     function validarUsuario(texto) {
@@ -98,3 +98,5 @@ document.addEventListener("DOMContentLoaded", function () {
         return re.test(contrasena);
     }
 });
+
+

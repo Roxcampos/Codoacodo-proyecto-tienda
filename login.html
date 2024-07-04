@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="./js/script.js"></script>
     <script src="./js/productos.js"></script>
+    <script src="./js/login.js"></script>
 
   
 </head>
@@ -41,11 +42,11 @@
             <div class="form-background">
                 <h1>Iniciar sesión</h1>
                 <form class="registro" id="loginForm">
-                    <input type="email" name="email" id="loginCorreo" required placeholder="email@dominio.com">
+                    <input type="user" name="usuario" id="usuario" required placeholder="Usuario">
                     <br>
-                    <input type="password" name="clave" id="loginContrasena" required placeholder="Contraseña">
+                    <input type="password" name="contrasena" id="contrasena" required placeholder="Contraseña">
                     <br><br>
-                    <input type="submit" value="Ingresar" class="ingresar">
+                    <button type="submit" value="Ingresar" class="ingresar" onclick="login()">Ingresar</button>
                 </form>
             </div>
             <div class="login">
@@ -63,7 +64,7 @@
         <!-- sin este div por alguna razon no se visualiza, supongo que hace que se muestre y por eso el #header de la funsion anterior -->
        <div id="footer"></div>
     </footer>
-  
+
 </body>
 
 </html>
