@@ -141,4 +141,29 @@ function toggleMenu() {
     const filtro = document.getElementById('filtro');
     filtro.classList.toggle('active');
 }
+function logout(){
+sessionStorage.setItem('log', false)
+window.location.href = 'index.html'; // Redirige a index.html
+}
+function logueado(){
+    document.addEventListener('DOMContentLoaded', function () {
+    // Supongamos que tienes una manera de verificar si el usuario está logueado
+    // y obtener el nombre del usuario. Por ejemplo, podrías usar una cookie,
+    // el almacenamiento local (localStorage), o una llamada a una API.
 
+    // Aquí usaremos localStorage para este ejemplo:
+    let usuarioLogueado = sessionStorage.getItem('usuario');
+
+    if (usuarioLogueado) {
+        // Si hay un usuario logueado, modifica el HTML
+        console.log('log')
+        let sesionContainer = document.getElementById('sesion-container');
+        sesionContainer.innerHTML = `
+            <span>Bienvenido, ${usuarioLogueado}</span>
+        `;
+    }
+    else {
+        console.log ('failed');
+    }
+});
+}

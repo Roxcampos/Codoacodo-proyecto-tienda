@@ -1,3 +1,10 @@
+<script>
+    let usuarioLogueado = sessionStorage.getItem('usuario');
+    let sesionContainer = document.getElementById('session-user');
+        sesionContainer.innerHTML = `
+            <span>Bienvenido, ${usuarioLogueado} |</span>
+        `;
+</script>
 <div class="caja row">
 
     <div class="encabezado">
@@ -9,8 +16,8 @@
                 <img src="./img/carrito-de-compras.png" alt="logo carrito">
                 <span id="cantidad-productos-carrito" class="cantidad-productos">0</span>
             </a>
-            <a id="crear-cuenta" href="./registro.html">Crear cuenta | </a>
-            <a id="login" href="./login.html">Login</a>
+            <span id="session-user">Bienvenido, ${usuarioLogueado} |</span>
+            <a id="logout" href="#" onclick="logout()">Logout</a>
         </div>
     </div>
 

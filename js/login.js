@@ -1,7 +1,6 @@
 function login() {
     //Manejo del login
-
-  document.getElementById('loginForm').addEventListener('click', function (event) {
+document.getElementById('loginForm').addEventListener('click', function (event) {
         event.preventDefault();
 
         // Obtener valores del formulario
@@ -29,7 +28,9 @@ function login() {
                 const user = data.find(user => user.usuario === usuario && user.contrasena === contrasena);
                 if (user) {
                     // Guardar información en localStorage
-                    sessionStorage.setItem('usuario', JSON.stringify({ usuario: usuario }));
+                    sessionStorage.setItem('usuario',  usuario );
+                    sessionStorage.setItem('log', true)
+                    sessionStorage.setItem('rol', user.rol)
 
                     // Redirigir a la página principal o la página de usuario
                     window.location.href = 'index.html';
@@ -37,7 +38,7 @@ function login() {
                 } else {
                     // Mostrar mensaje de error
                     alert('Credenciales incorrectas. Inténtalo de nuevo.');
-                    //window.location.href = 'login.html';
+                    window.location.href = 'login.html';
                 }
             })
             .catch(error => {
