@@ -14,44 +14,52 @@
 </head>
 
 <body>
-   <header>
-     <!-- llamo al header -->
-     <script>
-        let logged = sessionStorage.getItem('log')
-        let rol = sessionStorage.getItem('rol')
-        if (logged == "true"){
-            if (rol == "cliente"){
-                $(function () {
-                $("#header").load("headerlog.html", function () {
-                    $.getScript("./js/productos.js");
-                });
-            })}
-            else{
-                if (rol == "admin")
-                {
+    <header><!-- llamo al header -->
+        <!-- llamo al header -->
+        <script>
+            let logged = sessionStorage.getItem('log')
+            let rol = sessionStorage.getItem('rol')
+            if (logged == "true") {
+                if (rol == "cliente") {
                     $(function () {
-                    $("#header").load("headeradmin.html", function () {
+                        $("#header").load("headerlog.html", function () {
+                            $.getScript("./js/productos.js");
+                        });
+                    })
+                }
+                else {
+                    if (rol == "admin") {
+                        $(function () {
+                            $("#header").load("headeradmin.html", function () {
+                                $.getScript("./js/productos.js");
+                            });
+                        }
+                        )
+                    }
+                    else {
+                        $(function () {
+                            $("#header").load("header.html", function () {
+                                $.getScript("./js/productos.js");
+                            });
+                        });
+                        console.log(2)
+                    }
+                };
+
+                console.log(10)
+            }
+            else {
+                $(function () {
+                    $("#header").load("header.html", function () {
                         $.getScript("./js/productos.js");
                     });
-                }
-                )}   
-
-            };
-            
-        console.log(1)
-        }
-        else{
-        $(function () {
-            $("#header").load("header.html", function () {
-                $.getScript("./js/productos.js");
-            });
-        });
-        console.log(2)
-    }
-    </script>
-    <!-- sin este div por alguna razon no se visualiza, supongo que hace que se muestre y por eso el #header de la funsion anterior -->
-    <div id="header"></div>
-    <!-- Claro, desglosemos paso a paso lo que hace ese código:
+                });
+                console.log(2)
+            }
+        </script>
+        <!-- sin este div por alguna razon no se visualiza, supongo que hace que se muestre y por eso el #header de la funsion anterior -->
+        <div id="header"></div>
+        <!-- Claro, desglosemos paso a paso lo que hace ese código:
 
 1- <script>: Esta etiqueta HTML se utiliza para incluir código JavaScript en la página.
 2- $(function(){ ... }): Esto es una abreviatura de $(document).ready(function(){ ... }). Es una función de jQuery que se ejecuta cuando el documento HTML está completamente cargado y listo para manipularse.
