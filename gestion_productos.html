@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - Tienda KappaCode</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./js/productos.js"></script>
+    <script src="./js/script.js"></script>
+</head>
+
+<body>
+    <header><!-- llamo al header -->
+        <!-- llamo al header -->
+        <script>
+            let logged = sessionStorage.getItem('log')
+            let rol = sessionStorage.getItem('rol')
+            if (logged == "true") {
+                if (rol == "cliente") {
+                    $(function () {
+                        $("#header").load("headerlog.html", function () {
+                            $.getScript("./js/productos.js");
+                        });
+                    })
+                }
+                else {
+                    if (rol == "admin") {
+                        $(function () {
+                            $("#header").load("headeradmin.html", function () {
+                                $.getScript("./js/productos.js");
+                            });
+                        }
+                        )
+                    }
+                    else {
+                        $(function () {
+                            $("#header").load("header.html", function () {
+                                $.getScript("./js/productos.js");
+                            });
+                        });
+                        console.log(2)
+                    }
+                };
+
+                console.log(10)
+            }
+            else {
+                $(function () {
+                    $("#header").load("header.html", function () {
+                        $.getScript("./js/productos.js");
+                    });
+                });
+                console.log(2)
+            }
+        </script>
+        <!-- sin este div por alguna razon no se visualiza, supongo que hace que se muestre y por eso el #header de la funsion anterior -->
+        <div id="header"></div>
+        <!-- Claro, desglosemos paso a paso lo que hace ese código:
+ 
+ 1- <script>: Esta etiqueta HTML se utiliza para incluir código JavaScript en la página.
+ 2- $(function(){ ... }): Esto es una abreviatura de $(document).ready(function(){ ... }). Es una función de jQuery que se ejecuta cuando el documento HTML está completamente cargado y listo para manipularse.
+ 3- $("#header").load("header.html");:
+    · $("#header"): Esto selecciona el elemento con el id "header". Es decir, busca un elemento en el HTML con el atributo id igual a "header".
+    · .load("header.html"): Este método de jQuery carga el contenido de un archivo HTML (en este caso, "header.html") y lo inserta dentro del elemento seleccionado. En este caso, insertará el contenido de "header.html" dentro del elemento con el id "header".
+ 4- <div id="header"></div>: Este es el contenedor en el HTML donde se cargará el contenido del encabezado. Es un div con el id "header". -->
+        <!-- main mostramos tarjetas de productos -->
+    </header>
+    <main>
+        <div class="gestionProductos" id="gestionProductos">
+            <h1>Gestión de Productos</h1>
+        
+            <!-- Pestañas -->
+            <div class="tabs">
+                <button class="tab-button" onclick="openTab('crear')">Crear Producto</button>
+                <button class="tab-button" onclick="openTab('modificar')">Modificar Producto</button>
+                <button class="tab-button" onclick="openTab('eliminar')">Eliminar Producto</button>
+            </div>
+        
+            <!-- Contenedor de pestañas -->
+            <div id="crear" class="tab-content">
+                <h2>Crear Producto</h2>
+                <form id="formCrearProducto" class="gestion-form">
+                    <label for="nombreCrear">Nombre:</label>
+                    <input type="text" id="nombreCrear" required>
+                    
+                    <label for="precioCrear">Precio:</label>
+                    <input type="number" id="precioCrear" required>
+                    <label for="stockCrear">Stock:</label>
+                    <input type="number" id="stockCrear" required>
+                    
+                    <label for="categoriaCrear">Categoría:</label>
+                    <select id="categoriaCrear" required>
+                        <option value="remera">Remera</option>
+                        <option value="pantalon">Pantalón</option>
+                    </select>
+                    
+                    <label for="generoCrear">Género:</label>
+                    <select id="generoCrear" required>
+                        <option value="hombre">Hombre</option>
+                        <option value="mujer">Mujer</option>
+                    </select>
+                    
+                    <label for="imagenCrear">URL de la Imagen:</label>
+                    <input type="text" id="imagenCrear" required>
+                    
+                    <button type="button" onclick="guardarProducto()">Guardar</button>
+                </form>
+            </div>
+        
+            <div id="modificar" class="tab-content" style="display:none;">
+                <h2>Modificar Producto</h2>
+                <form id="formModificarProducto" class="gestion-form">
+                    <label for="idModificar">ID del Producto:</label>
+                    <input type="number" id="idModificar" required>
+                    <button type="button" onclick="buscarProductoModificar()">Buscar Producto</button><br>
+                    
+                    <label for="nombreModificar">Nombre:</label>
+                    <input type="text" id="nombreModificar">
+                    
+                    <label for="precioModificar">Precio:</label>
+                    <input type="number" id="precioModificar">
+                    
+                    <label for="stockModificar">Stock:</label>
+                    <input type="number" id="stockModificar">
+                    
+                    <label for="categoriaModificar">Categoría:</label>
+                    <select id="categoriaModificar">
+                        <option value="remera">Remera</option>
+                        <option value="pantalon">Pantalón</option>
+                    </select>
+                    
+                    <label for="generoModificar">Género:</label>
+                    <select id="generoModificar">
+                        <option value="hombre">Hombre</option>
+                        <option value="mujer">Mujer</option>
+                    </select><br>
+                    
+                    <label for="imagenModificar">URL de la Imagen:</label>
+                    <input type="text" id="imagenModificar">
+                    
+                    <button type="button" onclick="modificarProducto()">Modificar</button>
+                </form>
+            </div>
+        
+            <div id="eliminar" class="tab-content" style="display:none;">
+                <h2>Eliminar Producto</h2>
+                <form id="formEliminarProducto" class="gestion-form">
+                    <label for="idEliminar">ID del Producto:</label>
+                    <input type="number" id="idEliminar" required>
+                    <button type="button" onclick="buscarProductoEliminar()">Buscar Producto</button>
+                    
+                    <label for="nombreEliminar">Nombre:</label>
+                    <input type="text" id="nombreEliminar" disabled>
+                    
+                    <label for="precioEliminar">Precio:</label>
+                    <input type="number" id="precioEliminar" disabled>
+                    
+                    <label for="stockEliminar">Stock:</label>
+                    <input type="number" id="stockEliminar" disabled>
+                    
+                    <label for="categoriaEliminar">Categoría:</label>
+                    <select id="categoriaEliminar" disabled>
+                        <option value="remera">Remera</option>
+                        <option value="pantalon">Pantalón</option>
+                    </select>
+                    
+                    <label for="generoEliminar">Género:</label>
+                    <select id="generoEliminar" disabled>
+                        <option value="hombre">Hombre</option>
+                        <option value="mujer">Mujer</option>
+                    </select>
+                    
+                    <label for="imagenEliminar">URL de la Imagen:</label>
+                    <input type="text" id="imagenEliminar" disabled>
+                    
+                    <button type="button" onclick="borrarProducto()">Eliminar</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="slider-productos">
+            <div class="slide-track">
+                <div class="slide">
+                    <img src="img/pantalon hombre/pantalon1.webp" height="100" width="250" alt="">
+                </div>
+                <div class="slide">
+                    <img src="img/pantalon hombre/pantalon2.webp" height="100" width="250" alt="">
+                </div>
+                <div class="slide">
+                    <img src="img/remeras hombre/remera9.webp" height="100" width="250" alt="">
+                </div>
+                <div class="slide">
+                    <img src="img/remeras hombre/remera14.webp" height="100" width="250" alt="">
+                </div>
+                <div class="slide">
+                    <img src="img/remeras hombre/remera3.webp" height="100" width="250" alt="">
+                </div>
+                <div class="slide">
+                    <img src="img/remeras mujer/remera3.webp" height="100" width="250" alt="">
+                </div>
+                <div class="slide">
+                    <img src="img/remeras mujer/remera14.webp" height="100" width="250" alt="">
+                </div>
+                <div class="slide">
+                    <img src="img/pantalon mujer/pantalon4.webp" height="100" width="250" alt="">
+                </div>
+                <div class="slide">
+                    <img src="img/pantalon mujer/pantalon11.webp" height="100" width="250" alt="">
+                </div>
+                <div class="slide">
+                    <img src="img/pantalon mujer/pantalon14.webp" height="100" width="250" alt="">
+                </div>
+                <div class="slide">
+                    <img src="img/remeras mujer/remera12.webp" height="100" width="250" alt="">
+                </div>
+                <div class="slide">
+                    <img src="img/pantalon hombre/pantalon13.webp" height="100" width="250" alt="">
+                </div>
+                <div class="slide">
+                    <img src="img/pantalon hombre/pantalon10.webp" height="100" width="250" alt="">
+                </div>
+                <div class="slide">
+                    <img src="img/remeras hombre/remera4.webp" height="100" width="250" alt="">
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <footer> <!-- llamo al footer -->
+        <script>
+            $(function () {
+                $("#footer").load("footer.html");
+            });
+        </script>
+        <!-- sin este div por alguna razon no se visualiza, supongo que hace que se muestre y por eso el #header de la funsion anterior -->
+        <div id="footer"></div>
+    </footer>
+    <script> document.addEventListener('DOMContentLoaded', mostrar(sessionStorage.genero, sessionStorage.categoria, sessionStorage.Precio))</script>
+
+</body>
+
+</html>

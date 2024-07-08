@@ -1191,3 +1191,94 @@ input {
   }
 
 }
+/*Gestion productos*/
+
+/* Contenedor de gestión de productos */
+.gestionProductos {
+  width: 60%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+
+/* Título principal */
+.gestionProductos h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Pestañas */
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tab-button {
+  background-color: #ddd;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 5px 5px 0 0;
+}
+
+.tab-button:hover {
+  background-color: #ccc;
+}
+
+.tab-button.active {
+  background-color: #fff;
+  border-bottom: 2px solid #fff;
+}
+
+/* Contenido de las pestañas */
+.tab-content {
+  display: none;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  background-color: #fff;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Formularios */
+.gestion-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.gestion-form label {
+  margin: 10px 0 5px;
+  color: #333;
+}
+
+.gestion-form input, .gestion-form select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.gestion-form button {
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #28a745;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.gestion-form button:hover {
+  background-color: #218838;
+}
