@@ -132,7 +132,7 @@ if(producto.precio >= sessionStorage.getItem('precio') ){
 function index() {
     sessionStorage.setItem('genero', "all");
     sessionStorage.setItem('categoria', "all");
-    sessionStorage.setItem('precio', 0);
+    sessionStorage.setItem('precio', 999999999);
     sessionStorage.setItem('orden',"Ascendente")
 }
 

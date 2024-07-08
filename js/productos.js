@@ -317,7 +317,7 @@ function mostrar(genero, categoria, precio) {
 
             let cade = '';
             data.forEach(producto => {
-                if (producto.precio >= sessionStorage.getItem('precio')) {
+                if (sessionStorage.getItem('precio') == 0 || producto.precio <= sessionStorage.getItem('precio')) {
                     if (sessionStorage.genero != "all") {
                         if ((sessionStorage.genero == producto.genero) && ((sessionStorage.categoria == "all") || sessionStorage.categoria == producto.categoria)) {
                             cade += crearProductoHTML(producto);
@@ -489,7 +489,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 //Funcion para volver a prodcutos cuando hago click en Continuar comprando
-document.getElementById('continuar-comprando').addEventListener('click', function() {
+document.getElementById('continuar-comprando').addEventListener('click', function () {
     window.location.href = 'productos.html';
-  });
-  
+});
