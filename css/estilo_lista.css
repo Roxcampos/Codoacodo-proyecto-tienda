@@ -1,0 +1,10 @@
+.tab-content td {
+    text-align: center; /* Centra el texto horizontalmente */
+    vertical-align: middle; /* Centra el contenido verticalmente */
+    padding: 10px; /* Añade un padding para espaciar el contenido */
+}
+
+.producto-imagen {
+    display: block; /* Asegura que la imagen sea un bloque */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+}

@@ -4,6 +4,10 @@ document.addEventListener("DOMContentLoaded", function () {
         const tabs = document.querySelectorAll('.tab-content');
         tabs.forEach(tab => tab.style.display = 'none');
         document.getElementById(tabName).style.display = 'block';
+
+        if (tabName === 'listar') {
+            listarProductos();
+        }
     }
 
     // Función para guardar un nuevo producto
@@ -173,5 +177,47 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     };
 
-    window.openTab = openTab; // Exponer la función globalmente para usarla en el HTML
+ 
+    window.openTab = openTab;
 });
+// funcion listar productos
+function listarProductos() {
+    fetch('https://tiendakappacode.pythonanywhere.com/productos', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        const tablaProductos = document.getElementById('tablaProductos');
+        const listaProductosBody = document.getElementById('listaProductos');
+        listaProductosBody.innerHTML = ''; // Limpiar lista existente
+
+        data.forEach(producto => {
+            const filaProducto = document.createElement('tr');
+
+            // Crear celdas de tabla con los datos del producto
+            filaProducto.innerHTML = `
+                <td>${producto.id}</td>
+                <td>${producto.nombre}</td>
+                <td>$${producto.precio}</td>
+                <td>${producto.stock}</td>
+                <td>${producto.categoria}</td>
+                <td>${producto.genero}</td>
+                <td><img src="${producto.imagen}" width="50" height="70" class="producto-imagen"></td>
+            `;
+            
+            listaProductosBody.appendChild(filaProducto);
+        });
+    })
+    .catch(error => {
+        alert("Ocurrió un error al listar los productos.");
+        console.error('Error:', error);
+    });
+}
