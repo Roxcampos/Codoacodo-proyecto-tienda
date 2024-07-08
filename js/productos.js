@@ -298,7 +298,7 @@ let carrito = JSON.parse(sessionStorage.getItem('carrito')) || [];
 
 // Función para mostrar productos
 function mostrar(genero, categoria, precio) {
-    fetch("./js/productos.json")
+    fetch("https://tiendakappacode.pythonanywhere.com/productos")
         .then(response => {
             if (!response.ok) {
                 throw new Error('Error en la solicitud');
@@ -307,7 +307,7 @@ function mostrar(genero, categoria, precio) {
         })
         .then(data => {
             const filtroOrden = sessionStorage.getItem('orden');
-            data.productos.sort((a, b) => {
+            data.sort((a, b) => {
                 if (filtroOrden === 'Ascendente') {
                     return a.precio - b.precio;
                 } else if (filtroOrden === 'Descendente') {
@@ -316,7 +316,7 @@ function mostrar(genero, categoria, precio) {
             });
 
             let cade = '';
-            data.productos.forEach(producto => {
+            data.forEach(producto => {
                 if (producto.precio >= sessionStorage.getItem('precio')) {
                     if (sessionStorage.genero != "all") {
                         if ((sessionStorage.genero == producto.genero) && ((sessionStorage.categoria == "all") || sessionStorage.categoria == producto.categoria)) {
@@ -336,7 +336,7 @@ function mostrar(genero, categoria, precio) {
                 button.addEventListener('click', event => {
                     event.preventDefault();
                     const productId = button.getAttribute('data-id');
-                    const product = data.productos.find(p => p.id == productId);
+                    const product = data.find(p => p.id == productId);
                     agregarProductoAlCarrito(product);
                 });
             });
