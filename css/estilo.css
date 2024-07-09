@@ -1219,7 +1219,7 @@ input {
 }
 
 .tab-button {
-  background-color: #ddd;
+  background-color: #edc767;
   border: none;
   padding: 10px 20px;
   margin: 0 5px;
@@ -1229,12 +1229,12 @@ input {
 }
 
 .tab-button:hover {
-  background-color: #ccc;
+  background-color: #ef720b;
 }
 
 .tab-button.active {
-  background-color: #fff;
-  border-bottom: 2px solid #fff;
+  background-color: #f68814;
+  border-bottom: 2px solid #f68814;
 }
 
 /* Contenido de las pestañas */
@@ -1273,12 +1273,12 @@ input {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background-color: #28a745;
+  background-color: #ed5e44;
   color: #fff;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 .gestion-form button:hover {
-  background-color: #218838;
+  background-color: #f33f17;
 }

@@ -358,23 +358,29 @@ function crearProductoHTML(producto) {
     `;
 }
 
+
+
 // Agregar producto al carrito
 function agregarProductoAlCarrito(producto) {
     const index = carrito.findIndex(p => p.id === producto.id);
     if (index !== -1) {
-        carrito[index].cantidad += 1;
+        if (carrito[index].cantidad < producto.stock) {
+            carrito[index].cantidad += 1;
+        } else {
+            alert("No hay suficiente stock disponible");
+        }
     } else {
         carrito.push({
             id: producto.id,
             nombre: producto.nombre,
             precio: producto.precio,
+            stock: producto.stock,//agrego el stock
             cantidad: 1
         });
     }
     sessionStorage.setItem('carrito', JSON.stringify(carrito));
     actualizarCantidadProductos();
     actualizarCarrito();
-    //location.reload();
 }
 
 // Actualizar cantidad de productos en el carrito
@@ -417,7 +423,6 @@ function actualizarCarrito() {
         carritoBody.innerHTML += `
         <tr data-id="${item.id}">
             <td>${item.nombre}</td>
-            
             <td>
                 <div class="btn-group">
                     <button class="cantidad-btn" data-id="${item.id}" data-action="decrement">-</button>
@@ -460,7 +465,11 @@ function actualizarCantidad(productId, action) {
     const index = carrito.findIndex(p => p.id == productId);
     if (index !== -1) {
         if (action === 'increment') {
-            carrito[index].cantidad += 1;
+            if (carrito[index].cantidad < carrito[index].stock) {
+                carrito[index].cantidad += 1;
+            } else {
+                alert("No hay suficiente stock disponible"); //aca es cuando llega al max de stock
+            }
         } else if (action === 'decrement' && carrito[index].cantidad > 1) {
             carrito[index].cantidad -= 1;
         }
@@ -480,6 +489,7 @@ function eliminarProducto(productId) {
         actualizarCarrito();
     }
 }
+
 // Inicializar la página
 document.addEventListener('DOMContentLoaded', () => {
     actualizarCantidadProductos();
@@ -488,7 +498,62 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-//Funcion para volver a prodcutos cuando hago click en Continuar comprando
+//Funcion para volver a productos cuando hago click en Continuar comprando
 document.getElementById('continuar-comprando').addEventListener('click', function () {
     window.location.href = 'productos.html';
 });
+
+//uncion para descontar el stock cuando finalice la compra e inicie el pago
+document.getElementById('iniciar-pago').addEventListener('click', function() {
+    finalizarCompra();
+});
+
+function finalizarCompra() {
+    carrito.forEach(item => {
+        const productId = item.id;
+        const cantidad = item.cantidad;
+
+        // Obtener el producto del servidor antes de actualizarlo
+        fetch(`https://tiendakappacode.pythonanywhere.com/productos/${productId}`)
+            .then(response => response.json())
+            .then(producto => {
+                if (producto.stock < cantidad) {
+                    alert(`No hay suficiente stock para el producto ${producto.nombre}`);
+                    return;
+                }
+                producto.stock -= cantidad; // Descontar la cantidad del stock
+
+                // Actualizar el producto con la cantidad descontada
+                fetch(`https://tiendakappacode.pythonanywhere.com/productos/${productId}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(producto)
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Error al actualizar el stock');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log(`Stock actualizado para el producto ${productId}:`, data);
+                    // Aquí podrías agregar más lógica si es necesario
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            })
+            .catch(error => {
+                console.error('Error al obtener el producto:', error);
+            });
+    });
+
+    // Después de actualizar el stock, vacía el carrito y actualiza la interfaz
+    carrito = [];
+    sessionStorage.setItem('carrito', JSON.stringify(carrito));
+    actualizarCantidadProductos();
+    actualizarCarrito();
+    alert('Pago realizado con éxito y stock actualizado.');
+}

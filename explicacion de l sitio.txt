@@ -1,5 +1,0 @@
-Es una tienda de ropa, se crea un carrito y se pueden sumar mas
-cantidad y restar cantidad o eliminar elementos del carrito
-la pagina responsiva es el header mismo asi que todas deberian ser responsivas.
-el formulario validado con js es el de registro. se muestra en un alert cuando los campos no estan 
-correctamente ingresados.
