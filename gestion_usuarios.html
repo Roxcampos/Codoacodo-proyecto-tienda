@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios - Tienda KappaCode</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/estilo_lista.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./js/login.js"></script>
+    <script src="./js/gestion_usuarios.js"></script> <!-- Nuevo script añadido -->
+</head>
+<body>
+    <header><!-- llamo al header -->
+        <!-- llamo al header -->
+        <script>
+            let logged = sessionStorage.getItem('log')
+            let rol = sessionStorage.getItem('rol')
+            if (logged == "true") {
+                if (rol == "cliente") {
+                    $(function () {
+                        $("#header").load("headerlog.html", function () {
+                            $.getScript("./js/productos.js");
+                        });
+                    })
+                }
+                else {
+                    if (rol == "admin") {
+                        $(function () {
+                            $("#header").load("headeradmin.html", function () {
+                                $.getScript("./js/productos.js");
+                            });
+                        }
+                        )
+                    }
+                    else {
+                        $(function () {
+                            $("#header").load("header.html", function () {
+                                $.getScript("./js/productos.js");
+                            });
+                        });
+                        console.log(2)
+                    }
+                };
+
+                console.log(10)
+            }
+            else {
+                $(function () {
+                    $("#header").load("header.html", function () {
+                        $.getScript("./js/productos.js");
+                    });
+                });
+                console.log(2)
+            }
+        </script>
+        <div id="header"></div>
+    </header>
+    <main>
+        <div class="gestionUsuarios" id="gestionUsuarios">
+            <h1>Gestión de Usuarios</h1>
+        
+            <!-- Pestañas -->
+            <div class="tabs">
+                <button class="tab-button" onclick="openTabUsuario('crear')">Crear Usuario</button>
+                <button class="tab-button" onclick="openTabUsuario('modificar')">Modificar Usuario</button>
+                <button class="tab-button" onclick="openTabUsuario('eliminar')">Eliminar Usuario</button>
+                <button class="tab-button" onclick="openTabUsuario('listar')">Listar Usuarios</button> <!-- Nueva pestaña añadida -->
+            </div>
+        
+            <!-- Contenedor de pestañas -->
+            <div id="crear" class="tab-content">
+                <h2>Crear Usuario</h2>
+                <form id="formCrearUsuario" class="gestion-form">
+                    
+                    <label for="usuarioCrear">Usuario:</label>
+                    <input type="text" id="usuarioCrear" required>
+                    
+                    <label for="nombresCrear">Nombres:</label>
+                    <input type="text" id="nombresCrear" required>
+                    
+                    <label for="apellidosCrear">Apellidos:</label>
+                    <input type="text" id="apellidosCrear" required>
+                    
+                    <label for="correoCrear">E-mail:</label>
+                    <input type="text" id="correoCrear" required>
+                    
+                    <label for="contrasenaCrear">Contraseña:</label>
+                    <input type="text" id="contrasenaCrear" required>
+                                      
+                    <label for="rolCrear">Rol:</label>
+                    <select id="rolCrear" required>
+                        <option value="cliente">Cliente</option>
+                        <option value="admin">Administrador</option>
+                    </select>
+                   
+                    <button type="button" onclick="guardarUsuario()">Guardar</button>
+                </form>
+            </div>
+        
+            <div id="modificar" class="tab-content" style="display:none;">
+                <h2>Modificar Usuario</h2>
+                <form id="formModificarUsuario" class="gestion-form">
+                    <label for="idModificar">ID del Usuario:</label>
+                    
+                    <input type="number" id="idModificar" required>
+                    <button type="button" onclick="buscarUsuarioModificar()">Buscar Usuario</button><br>
+                    
+                    <label for="usuarioModificar">Usuario:</label>
+                    <input type="text" id="usuarioModificar">
+                    
+                    <label for="nombresModificar">Nombres:</label>
+                    <input type="text" id="nombresModificar">
+                    
+                    <label for="apellidosModificar">Apellidos:</label>
+                    <input type="text" id="apellidosModificar">
+                    
+                    <label for="correoModificar">E-mail:</label>
+                    <input type="text" id="correoModificar">
+                    
+                    <label for="contrasenaModificar">Contraseña:</label>
+                    <input type="text" id="contrasenaModificar">
+                                      
+                    <label for="rolModificar">Rol:</label>
+                    <select id="rolModificar">
+                        <option value="cliente">Cliente</option>
+                        <option value="admin">Administrador</option>
+                    </select>
+                  
+                    <button type="button" onclick="modificarUsuario()">Modificar</button>
+                </form>
+            </div>
+        
+            <div id="eliminar" class="tab-content" style="display:none;">
+                <h2>Eliminar Usaurio</h2>
+                <form id="formEliminarUsuario" class="gestion-form">
+                    <label for="idEliminar">ID del Usuario:</label>
+                   
+                    <input type="number" id="idEliminar" required>
+                    <button type="button" onclick="buscarUsuarioEliminar()">Buscar Usuario</button>
+                    
+                    <label for="usuarioEliminar">Usuario:</label>
+                    <input type="text" id="usuarioEliminar" disabled>
+                    
+                    <label for="nombresEliminar">Nombres:</label>
+                    <input type="text" id="nombresEliminar" disabled>
+                    
+                    <label for="apellidosEliminar">Apellidos:</label>
+                    <input type="text" id="apellidosEliminar" disabled>
+                    
+                    <label for="correoEliminar">E-mail:</label>
+                    <input type="text" id="correoEliminar" disabled>
+                    
+                    <label for="contrasenaEliminar">Contraseña:</label>
+                    <input type="text" id="contrasenaEliminar" disabled>
+                                      
+                    <label for="rolEliminar">Rol:</label>
+                    <select id="rolEliminar" disabled>
+                        <option value="cliente">Cliente</option>
+                        <option value="admin">Administrador</option>
+                    </select>
+                  
+                    <button type="button" onclick="borrarUsuario()">Eliminar</button>
+                </form>
+            </div>
+        
+            <div id="listar" class="tab-content" style="display:none;">
+                <button onclick="listarUsuarios()">Listar Usuarios</button>
+                <table id="tablaUsuarios">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Usuario</th>
+                            <th>Nombres</th>
+                            <th>Apellidos</th>
+                            <th>E-mail</th>
+                            <th>Contraseña</th>
+                            <th>Rol</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listaUsuarios">
+                        <!-- Aquí se generarán las filas de Usuarios -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+    </main>
+</body>
+</html>
