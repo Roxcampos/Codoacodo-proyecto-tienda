@@ -28,6 +28,7 @@ document.getElementById('loginForm').addEventListener('click', function (event) 
                 const user = data.find(user => user.usuario === usuario && user.contrasena === contrasena);
                 if (user) {
                     // Guardar información en localStorage
+                    sessionStorage.setItem('id',  user.id );
                     sessionStorage.setItem('usuario',  usuario );
                     sessionStorage.setItem('log', true)
                     sessionStorage.setItem('rol', user.rol)
