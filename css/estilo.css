@@ -1338,3 +1338,64 @@ input {
 .gestionUsuarios-form button:hover {
   background-color: #f33f17;
 }
+
+/*Formualrio perfil de usuario*/
+/* Perfil Usuario */
+
+.perfil-container {
+  width: 60%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fabc4b;
+}
+
+.perfil-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333333;
+}
+
+.perfil-container .form-group {
+  margin-bottom: 15px;
+}
+
+.perfil-container label {
+  display: block;
+  margin: 10px 0 5px;
+  color: #333;
+}
+
+.perfil-container .perfil-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.perfil-container .form-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.perfil-container button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ed5e44;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.perfil-container button:hover {
+  background-color: #f33f17;
+}
+
+.perfil-container button#guardarBtn {
+  display: none;
+}
