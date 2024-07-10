@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Tiena KappaCode</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./js/productos.js"></script>
+
+
+</head>
+
+<body>
+    <header><!-- llamo al header -->
+        <script>
+            $(function () {
+                $("#header").load("header.html");
+            });
+        </script>
+        <!-- sin este div por alguna razon no se visualiza, supongo que hace que se muestre y por eso el #header de la funsion anterior -->
+        <div id="header"></div>
+        <!-- Claro, desglosemos paso a paso lo que hace ese código:
+
+1- <script>: Esta etiqueta HTML se utiliza para incluir código JavaScript en la página.
+2- $(function(){ ... }): Esto es una abreviatura de $(document).ready(function(){ ... }). Es una función de jQuery que se ejecuta cuando el documento HTML está completamente cargado y listo para manipularse.
+3- $("#header").load("header.html");:
+   · $("#header"): Esto selecciona el elemento con el id "header". Es decir, busca un elemento en el HTML con el atributo id igual a "header".
+   · .load("header.html"): Este método de jQuery carga el contenido de un archivo HTML (en este caso, "header.html") y lo inserta dentro del elemento seleccionado. En este caso, insertará el contenido de "header.html" dentro del elemento con el id "header".
+4- <div id="header"></div>: Este es el contenedor en el HTML donde se cargará el contenido del encabezado. Es un div con el id "header". -->
+        <!-- main mostramos tarjetas de productos -->
+    </header>
+
+    <main>
+        <div class="caja-contacto">
+            <div class="col-6">
+                <section class="form-contacto">
+                    <h1>~FORMULARIO DE CONTACTO~</h1>
+                    <form>
+                        <label for="nombreapellido">Nombre y Apellido</label>
+                        <input type="text" id="nombreapellido" class="input-padron" required>
+
+                        <label for="correoelectronico">Correo Electrónico</label>
+                        <input type="email" id="correoelectronico" class="input-padron" required
+                            placeholder="email@dominio.com">
+
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" class="input-padron" required placeholder="(XX) XXXX XXXX">
+
+                        <label for="mensaje">Mensaje</label>
+                        <textarea cols="70" rows="10" id="mensaje" class="input-padron" required></textarea>
+
+                        <fieldset>
+                            <legend>¿Cómo le gustaría que lo contactemos?</legend>
+
+                            <label for="radio-email"><input type="radio" name="contacto" value="email"
+                                    id="radio-email">Email</label>
+
+                            <label for="radio-telefono"><input type="radio" name="contacto" value="telefono"
+                                    id="radio-telefono">Teléfono</label>
+
+                            <label for="radio-whatsapp"><input type="radio" name="contacto" value="whatsapp"
+                                    id="radio-whatsapp" checked>WhatsApp</label>
+
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>¿En cuál horario puede ser contactado?</legend>
+                            <select>
+                                <option>Mañana</option>
+                                <option>Tarde</option>
+                                <option>Noche</option>
+                            </select>
+                        </fieldset>
+
+                        <label class="checkbox"><input type="checkbox" checked>¿Le gustaría recibir novedades de Tienda
+                            KappaCode?</label>
+
+                        <input type="submit" value="Enviar formulario" class="enviar">
+
+                    </form>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Día</th>
+                                <th>Horario</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Lunes a Viernes</td>
+                                <td>09h ~ 20h</td>
+                            </tr>
+                            <tr>
+                                <td>Sábados</td>
+                                <td>08h ~ 12h</td>
+                            </tr>
+                            <tr>
+                                <td>Domingos y Feriados</td>
+                                <td>Cerrado</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+            <div class="col-6">
+                <section class="empresa">
+                    <h3 class="titulo-principal">¿Quienes somos?</h3>
+                    <br>
+                    <p>
+                        KappaCode es una empresa de moda argentina que ha logrado marcar un hito en el rubro de la
+                        indumentaria a nivel nacional en los últimos años con un estilo muy marcado, que pudo cautivar a
+                        un público que atraviesa todas las edades y géneros, brindando a cualquier persona de la región
+                        la posibilidad de vestirse con ropa de calidad.
+
+                        Con un local ubicado en el corazon de Córdoba capital e impulsando la venta por internet, se ha
+                        conformado una organización con una fuerte cultura familiar atravesada por tres generaciones y
+                        altas aspiraciones de crecimiento.</p>
+                    <br>
+                </section>
+                <section class="mapa-tienda">
+                    <h3 class="titulo-principal">Nuestra Ubicación</h3>
+                    <div class="mapa-contenido">
+                        <iframe
+                            src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=es&amp;q=Galeria%20San%20Martin,%20Cordoba,%20Argentina+(Tienda%20Kappa%20Code)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                            width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen=""
+                            aria-hidden="false" tabindex="0"></iframe>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    <footer> <!-- llamo al footer -->
+        <script>
+            $(function () {
+                $("#footer").load("footer.html");
+            });
+        </script>
+        <!-- sin este div por alguna razon no se visualiza, supongo que hace que se muestre y por eso el #header de la funsion anterior -->
+        <div id="footer"></div>
+    </footer>
+    <script>clickearFiltro()</script>
+</body>
+
+</html>
