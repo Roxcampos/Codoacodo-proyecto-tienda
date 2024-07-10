@@ -129,6 +129,17 @@ if(producto.precio >= sessionStorage.getItem('precio') ){
       });
   });
   */
+
+  /*funcion para lista administtrador*/
+  function navigateAdmin() {
+    const selectedOption = document.getElementById('admin-dropdown').value;
+    if (selectedOption) {
+        window.location.href = selectedOption;
+    }
+}
+
+
+
 function index() {
     sessionStorage.setItem('genero', "all");
     sessionStorage.setItem('categoria', "all");
@@ -186,3 +197,4 @@ function openTab(tabName) {
 document.addEventListener("DOMContentLoaded", function() {
     openTab('crear');
 });
+

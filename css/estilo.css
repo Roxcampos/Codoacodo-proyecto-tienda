@@ -61,7 +61,11 @@ nav li {
   width: 100%;
   padding: 20px;
 }
-
+/*manejo administracion*/
+.admin-dropdown {
+  display: inline-block;
+  margin-left: 10px;
+}
 .logo {
 
   display: flex;
@@ -1283,49 +1287,54 @@ input {
   background-color: #f33f17;
 }
 /*Perfil Usuario*/
-.perfil-container {
-  max-width: 600px;
+/* Gestion Usuarios */
+
+/* Contenedor de gestión de usuarios */
+.gestionUsuarios {
+  width: 60%;
   margin: 0 auto;
   padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
 }
 
-.perfil-container h2 {
+/* Título principal */
+.gestionUsuarios h1 {
   text-align: center;
-  font-family: 'Montserrat', sans-serif;
   margin-bottom: 20px;
+  color: #333;
 }
 
-.perfil-container form {
+/* Formularios */
+.gestionUsuarios-form {
   display: flex;
   flex-direction: column;
 }
 
-.perfil-container label {
-  margin-bottom: 5px;
-  font-weight: bold;
-  font-family: 'Montserrat', sans-serif;
+.gestionUsuarios-form label {
+  margin: 10px 0 5px;
+  color: #333;
 }
 
-.perfil-container .perfil-input {
+.gestionUsuarios-form input, .gestionUsuarios-form select {
   padding: 10px;
-  margin-bottom: 15px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 5px;
 }
 
-.perfil-container button {
+.gestionUsuarios-form button {
+  margin-top: 20px;
   padding: 10px;
-  margin-top: 10px;
   border: none;
-  background-color: #007bff;
-  color: white;
-  border-radius: 4px;
+  border-radius: 5px;
+  background-color: #ed5e44;
+  color: #fff;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.perfil-container button:hover {
-  background-color: #0056b3;
+.gestionUsuarios-form button:hover {
+  background-color: #f33f17;
 }

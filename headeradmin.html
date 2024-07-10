@@ -13,11 +13,13 @@
         </div>
         <div id="sesion-container" class="sesion derecha col-9">
             <span id="session-user">Bienvenido, ${usuarioLogueado} |  </span>
-            <a id="admin" href="./gestion_productos.html">Administracion | 
-
-            </a>
-
-          
+            <div class="admin-dropdown">
+                <select id="admin-dropdown" onchange="navigateAdmin()">
+                    <option value="">Administración</option>
+                    <option value="gestion_productos.html">Gestión de Productos</option>
+                    <option value="gestion_usuarios.html">Gestión de Usuarios</option>
+                </select>
+            </div>
             <a id="logout" href="#" onclick="logout()">Logout</a>
         </div>
     </div>
