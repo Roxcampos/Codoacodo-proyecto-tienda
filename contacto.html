@@ -18,10 +18,47 @@
 
 <body>
     <header><!-- llamo al header -->
+        <!-- llamo al header -->
         <script>
-            $(function () {
-                $("#header").load("header.html");
-            });
+            let logged = sessionStorage.getItem('log')
+            let rol = sessionStorage.getItem('rol')
+            if (logged == "true") {
+                if (rol == "cliente") {
+                    $(function () {
+                        $("#header").load("headerlog.html", function () {
+                            $.getScript("./js/productos.js");
+                        });
+                    })
+                }
+                else {
+                    if (rol == "admin") {
+                        $(function () {
+                            $("#header").load("headeradmin.html", function () {
+                                $.getScript("./js/productos.js");
+                            });
+                        }
+                        )
+                    }
+                    else {
+                        $(function () {
+                            $("#header").load("header.html", function () {
+                                $.getScript("./js/productos.js");
+                            });
+                        });
+                        console.log(2)
+                    }
+                };
+
+                console.log(10)
+            }
+            else {
+                $(function () {
+                    $("#header").load("header.html", function () {
+                        $.getScript("./js/productos.js");
+                    });
+                });
+                console.log(2)
+            }
         </script>
         <!-- sin este div por alguna razon no se visualiza, supongo que hace que se muestre y por eso el #header de la funsion anterior -->
         <div id="header"></div>

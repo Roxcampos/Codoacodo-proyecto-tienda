@@ -317,6 +317,7 @@ function mostrar(genero, categoria, precio) {
 
             let cade = '';
             data.forEach(producto => {
+                if (producto.stock > 0){
                 if (sessionStorage.getItem('precio') == 0 || producto.precio <= sessionStorage.getItem('precio')) {
                     if (sessionStorage.genero != "all") {
                         if ((sessionStorage.genero == producto.genero) && ((sessionStorage.categoria == "all") || sessionStorage.categoria == producto.categoria)) {
@@ -327,6 +328,9 @@ function mostrar(genero, categoria, precio) {
                             cade += crearProductoHTML(producto);
                         }
                     }
+                }}
+                else{
+                    cade += crearProductoHTMLSinStock(producto);
                 }
             });
 
@@ -354,6 +358,16 @@ function crearProductoHTML(producto) {
             <p class="producto-descripcion">${producto.nombre}</p>
             <p class="producto-precio">$ ${producto.precio}</p>
             <button class="btn-carrito" data-id="${producto.id}">Agregar Al Carrito</button>
+        </li>
+    `;
+}
+function crearProductoHTMLSinStock(producto) {
+    return `
+        <li>
+            <img class="imagen" src="${producto.imagen}">
+            <p class="producto-descripcion">${producto.nombre}</p>
+            <p class="producto-precio">$ ${producto.precio}</p>
+            <button class=SinStock data-id="${producto.id}">Sin Stock</button>
         </li>
     `;
 }
@@ -520,9 +534,8 @@ function finalizarCompra() {
                 if (producto.stock < cantidad) {
                     alert(`No hay suficiente stock para el producto ${producto.nombre}`);
                     return;
-                }
+                }else{
                 producto.stock -= cantidad; // Descontar la cantidad del stock
-
                 // Actualizar el producto con la cantidad descontada
                 fetch(`https://tiendakappacode.pythonanywhere.com/productos/${productId}`, {
                     method: 'PUT',
@@ -544,7 +557,8 @@ function finalizarCompra() {
                 .catch(error => {
                     console.error('Error:', error);
                 });
-            })
+            alert('Producto modificado correctamente');
+    }})
             .catch(error => {
                 console.error('Error al obtener el producto:', error);
             });
@@ -555,5 +569,5 @@ function finalizarCompra() {
     sessionStorage.setItem('carrito', JSON.stringify(carrito));
     actualizarCantidadProductos();
     actualizarCarrito();
-    alert('Pago realizado con éxito y stock actualizado.');
+ 
 }
