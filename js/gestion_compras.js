@@ -13,9 +13,9 @@ function listarProductos() {
         return response.json();
     })
     .then(data => {
-        const tablaProductos = document.getElementById('tablaCompras');
-        const listaProductosBody = document.getElementById('listaCompras');
-        listaProductosBody.innerHTML = ''; // Limpiar lista existente
+        const tablaCompras = document.getElementById('tablaCompras');
+        const listaComprasBody = document.getElementById('listaCompras');
+        listaComprasBody.innerHTML = ''; // Limpiar lista existente
 
         data.forEach(compra => {
             const filaCompra = document.createElement('tr');
