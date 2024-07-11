@@ -37,7 +37,7 @@ function cargarDatosUsuario() {
         document.getElementById('guardarBtn').style.display = 'inline';
     });
 
-    document.getElementById('guardarBtn').addEventListener('click', guardarDatosUsuario);
+   // document.getElementById('guardarBtn').addEventListener('click', guardarDatosUsuario);
 }
 
 function guardarDatosUsuario() {
@@ -58,7 +58,7 @@ function guardarDatosUsuario() {
     };
 
     fetch(`https://tiendakappacode.pythonanywhere.com/usuarios/${userId}`, {
-        method: 'PUT',
+        method: 'PATCH',
         headers: {
             'Content-Type': 'application/json'
         },
@@ -67,21 +67,18 @@ function guardarDatosUsuario() {
     .then(response => {
         if (!response.ok) {
             throw new Error('No se pudo guardar los datos del usuario');
+            console.log(response.ok);
         }
         return response.json();
     })
     .then(data => {
-        if (data.success) {
-            alert('Datos modificados con éxito');
-            document.querySelectorAll('#perfilForm .perfil-input').forEach(input => input.disabled = true);
-            document.getElementById('modificarBtn').style.display = 'inline';
-            document.getElementById('guardarBtn').style.display = 'none';
-        } else {
-            alert(data.message || 'Hubo un problema al intentar guardar los datos del usuario');
-        }
+      alert('Datos guardados correctamente');
     })
     .catch(error => console.error('Error al guardar datos del usuario:', error));
+    
 }
 
 cargarDatosUsuario();
+/*
 guardarDatosUsuario();
+*/

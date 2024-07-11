@@ -9,6 +9,7 @@ footer {
   font-style: normal;
   box-sizing: border-box;
   text-decoration: none;
+  margin:0;
 }
 
 /* Header */
@@ -384,7 +385,26 @@ div#slider figure {
   font-weight: bold;
   margin-top: 10px;
 }
-
+.SinStock {
+  position: absolute;
+  /* Cambiamos a posición absoluta */
+  bottom: 4px;
+  /* Alineamos el botón en la parte inferior */
+  left: 50%;
+  /* Lo movemos al 50% del lado izquierdo */
+  transform: translateX(-50%);
+  /* Alineamos el botón horizontalmente */
+  width: 80%;
+  /* Ancho ajustado para el botón */
+  background-color: #6b6b6a;
+  border-radius: 20px;
+  font-family: "Inter";
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  color: #fff;
+  border: none;
+}
 .btn-carrito {
   position: absolute;
   /* Cambiamos a posición absoluta */
