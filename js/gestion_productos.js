@@ -70,6 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById('categoriaModificar').value = data.categoria;
                 document.getElementById('generoModificar').value = data.genero;
                 document.getElementById('imagenModificar').value = data.imagen;
+                
             } else {
                 alert('Producto no encontrado');
             }

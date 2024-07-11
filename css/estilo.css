@@ -66,6 +66,7 @@ nav li {
 .admin-dropdown {
   display: inline-block;
   margin-left: 10px;
+  background-color: orange;
 }
 .logo {
 
