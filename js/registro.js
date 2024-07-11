@@ -69,7 +69,9 @@ function altaUsuario() {
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
+                    alert('Usuario registrado exitosamente.');
                     window.location.href = 'login.html';
+                   
                 } else {
                     mensajeError.textContent = data.message;
                 }
