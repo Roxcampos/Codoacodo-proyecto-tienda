@@ -6,14 +6,12 @@ function altaUsuario() {
 
     formulario.addEventListener('submit', function (evento) {
         evento.preventDefault(); // Previene el envío del formulario para poder validarlo con Javascript
-        alert("a");
         let usuario = document.getElementById('usuario').value;
         let nombres = document.getElementById('nombres').value;
         let apellidos = document.getElementById('apellidos').value;
         let email = document.getElementById('correo').value;
         let contrasena = document.getElementById('contrasena').value;
         let terminos = document.getElementById('terminos').checked;
-      
         // Validación de los campos
         if (!validarUsuario(usuario)) {
             alert('El campo nombre de usuario no puede estar vacío.');
@@ -70,13 +68,6 @@ function altaUsuario() {
             .then(response => response.json())
             .then(data => {
                 alert('Usuario registrado exitosamente.');
-                if (data.success) {
-                    alert('Usuario registrado exitosamente.');
-                    window.location.href = 'login.html';
-
-                } else {
-                    mensajeError.textContent = data.message;
-                }
             })
             .catch(error => {
                 alert('Ocurrió un error al registrar el usuario.');
