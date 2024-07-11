@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion de Compras- Tienda KappaCode</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/estilo_lista.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./js/productos.js"></script>
+    <script src="./js/gestion_compras.js"></script> <!-- Nuevo script añadido -->
+</head>
+<body>
+    <header><!-- llamo al header -->
+        <!-- llamo al header -->
+        <script>
+            let logged = sessionStorage.getItem('log')
+            let rol = sessionStorage.getItem('rol')
+            if (logged == "true") {
+                if (rol == "cliente") {
+                    $(function () {
+                        $("#header").load("headerlog.html", function () {
+                            $.getScript("./js/productos.js");
+                        });
+                    })
+                }
+                else {
+                    if (rol == "admin") {
+                        $(function () {
+                            $("#header").load("headeradmin.html", function () {
+                                $.getScript("./js/productos.js");
+                            });
+                        }
+                        )
+                    }
+                    else {
+                        $(function () {
+                            $("#header").load("header.html", function () {
+                                $.getScript("./js/productos.js");
+                            });
+                        });
+                        console.log(2)
+                    }
+                };
+
+                console.log(10)
+            }
+            else {
+                $(function () {
+                    $("#header").load("header.html", function () {
+                        $.getScript("./js/productos.js");
+                    });
+                });
+                console.log(2)
+            }
+        </script>
+        <div id="header"></div>
+    </header>
+    <main>
+        <div class="gestionProductos" id="gestionProductos">
+            <h1>Gestión de Productos</h1>
+        
+            <!-- Pestañas -->
+            <div class="tabs">
+                <button class="tab-button" onclick="openTab('listar')">Listar Compras</button> <!-- Nueva pestaña añadida -->
+            </div>
+        
+            <!-- Contenedor de pestañas -->
+            <div id="listar" class="tab-content" style="display:none;">
+                <button onclick="listarCompras()">Listar Compras</button>
+                <table id="tablaCompras">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>ID Usuario</th>
+                            <th>ID Producto</th>
+                            <th>Cantidad</th>
+                            <th>Importe Total</th>
+                            <th>Fecha de Compra</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listaCompras">
+                        <!-- Aquí se generarán las filas de productos -->
+                    </tbody>
+                </table>
+            </div>
+            
+        
+    </main>
+</body>
+</html>
