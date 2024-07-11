@@ -41,13 +41,7 @@ function guardarProducto() {
     })
         .then(response => response.json())
         .then(data => {
-            if (data.success) {
-                alert('Producto creado con éxito');
-                // Limpiar el formulario
-                document.getElementById('formCrearProducto').reset();
-            } else {
-                alert(data.message);
-            }
+            alert('Producto creado con éxito');
         })
         .catch(error => {
             alert("Ocurrió un error al crear el producto.");
@@ -162,13 +156,7 @@ function borrarProducto() {
     })
         .then(response => response.json())
         .then(data => {
-            if (data.success) {
-                alert('Producto eliminado con éxito');
-                // Limpiar el formulario
-                document.getElementById('formEliminarProducto').reset();
-            } else {
-                alert(data.message);
-            }
+            alert('Producto eliminado con éxito');
         })
         .catch(error => {
             alert("Ocurrió un error al eliminar el producto.");
