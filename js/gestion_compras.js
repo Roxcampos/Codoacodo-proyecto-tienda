@@ -1,5 +1,5 @@
 // funcion listar productos
-function listarProductos() {
+function listarCompras() {
     fetch('https://tiendakappacode.pythonanywhere.com/compras', {
         method: 'GET',
         headers: {
@@ -24,9 +24,9 @@ function listarProductos() {
             filaCompra.innerHTML = `
                 <td>${compra.id}</td>
                 <td>${compra.id_usuario}</td>
-                <td>$${compra.id_producto}</td>
+                <td>${compra.id_producto}</td>
                 <td>${compra.cantidad}</td>
-                <td>${compra.importe_total}</td>
+                <td>$${compra.importe_total}</td>
                 <td>${compra.fecha_compra}</td>
             `;
             

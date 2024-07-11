@@ -68,7 +68,7 @@
                 <button class="tab-button" onclick="openTab('crear')">Crear Producto</button>
                 <button class="tab-button" onclick="openTab('modificar')">Modificar Producto</button>
                 <button class="tab-button" onclick="openTab('eliminar')">Eliminar Producto</button>
-                <button class="tab-button" onclick="openTab('listar')">Listar Productos</button> <!-- Nueva pestaña añadida -->
+                <button class="tab-button" onclick="listarProductos(),openTab('listar')">Listar Productos</button> <!-- Nueva pestaña añadida -->
             </div>
         
             <!-- Contenedor de pestañas -->
@@ -173,8 +173,7 @@
             </div>
         
             <div id="listar" class="tab-content" style="display:none;">
-                <button onclick="listarProductos()">Listar Productos</button>
-                <table id="tablaProductos">
+                    <table id="tablaProductos">
                     <thead>
                         <tr>
                             <th>ID</th>

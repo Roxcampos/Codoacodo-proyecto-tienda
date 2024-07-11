@@ -60,17 +60,17 @@
         <div id="header"></div>
     </header>
     <main>
-        <div class="gestionProductos" id="gestionProductos">
-            <h1>Gestión de Productos</h1>
+        <div class="gestionCompras" id="gestionCompras">
+            <h1>Gestión de Compras</h1>
         
             <!-- Pestañas -->
             <div class="tabs">
-                <button class="tab-button" onclick="openTab('listar')">Listar Compras</button> <!-- Nueva pestaña añadida -->
+                <button class="tab-button" onclick="listarCompras(),openTab('listar')">Listar Compras</button> <!-- Nueva pestaña añadida -->
             </div>
         
             <!-- Contenedor de pestañas -->
             <div id="listar" class="tab-content" style="display:none;">
-                <button onclick="listarCompras()">Listar Compras</button>
+               
                 <table id="tablaCompras">
                     <thead>
                         <tr>
