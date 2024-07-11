@@ -66,6 +66,7 @@ nav li {
 .admin-dropdown {
   display: inline-block;
   margin-left: 10px;
+  background-color: orange;
 }
 .logo {
 
@@ -1225,7 +1226,7 @@ input {
   border: 1px solid #ccc;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: #c6f9e2;
+  background-color:  #e3e2d8;
 }
 
 /* Título principal */
@@ -1317,7 +1318,7 @@ input {
   border: 1px solid #ccc;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: #c6f9e2;
+  background-color: #e3e2d8;
 }
 
 /* Título principal */
@@ -1418,4 +1419,45 @@ input {
 
 .perfil-container button#guardarBtn {
   display: none;
+}
+
+/* Formularios compras*/
+.gestionCompras {
+  width: 60%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #e3e2d8;
+}
+.gestionCompras-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.gestionCompras-form label {
+  margin: 10px 0 5px;
+  color: #333;
+}
+
+.gestionCompras-form input, .gestionCompras-form select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.gestionCompras-form button {
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ed5e44;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.gestionCompras-form button:hover {
+  background-color: #f33f17;
 }
