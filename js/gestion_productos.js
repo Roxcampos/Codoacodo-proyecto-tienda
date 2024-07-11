@@ -1,40 +1,44 @@
+
 document.addEventListener("DOMContentLoaded", function () {
-    // Mostrar la pestaña seleccionada y ocultar las otras
-    function openTab(tabName) {
+    function openTab2(tabName) {
         const tabs = document.querySelectorAll('.tab-content');
         tabs.forEach(tab => tab.style.display = 'none');
         document.getElementById(tabName).style.display = 'block';
 
+        // Verificar si se refiere a la lista de productos
         if (tabName === 'listar') {
             listarProductos();
         }
     }
 
-    // Función para guardar un nuevo producto
-    window.guardarProducto = function () {
-        const nombre = document.getElementById('nombreCrear').value;
-        const precio = document.getElementById('precioCrear').value;
-        const stock = document.getElementById('stockCrear').value;
-        const categoria = document.getElementById('categoriaCrear').value;
-        const genero = document.getElementById('generoCrear').value;
-        const imagen = document.getElementById('imagenCrear').value;
+    window.openTab2 = openTab2;
+});
 
-        const data = {
-            nombre: nombre,
-            precio: precio,
-            stock: stock,
-            categoria: categoria,
-            genero: genero,
-            imagen: imagen
-        };
+// Función para guardar un nuevo producto
+function guardarProducto() {
+    const nombre = document.getElementById('nombreCrear').value;
+    const precio = document.getElementById('precioCrear').value;
+    const stock = document.getElementById('stockCrear').value;
+    const categoria = document.getElementById('categoriaCrear').value;
+    const genero = document.getElementById('generoCrear').value;
+    const imagen = document.getElementById('imagenCrear').value;
 
-        fetch('https://tiendakappacode.pythonanywhere.com/productos', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
+    const data = {
+        nombre: nombre,
+        precio: precio,
+        stock: stock,
+        categoria: categoria,
+        genero: genero,
+        imagen: imagen
+    };
+
+    fetch('https://tiendakappacode.pythonanywhere.com/productos', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
         .then(response => response.json())
         .then(data => {
             if (data.success) {
@@ -49,18 +53,18 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Ocurrió un error al crear el producto.");
             console.error('Error:', error);
         });
-    };
+};
 
-    // Función para buscar un producto para modificar
-    window.buscarProductoModificar = function () {
-        const id = document.getElementById('idModificar').value;
+// Función para buscar un producto para modificar
+function buscarProductoModificar() {
+    const id = document.getElementById('idModificar').value;
 
-        fetch(`https://tiendakappacode.pythonanywhere.com/productos/${id}`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
+    fetch(`https://tiendakappacode.pythonanywhere.com/productos/${id}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
         .then(response => response.json())
         .then(data => {
             if (data) {
@@ -78,60 +82,54 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Ocurrió un error al buscar el producto.");
             console.error('Error:', error);
         });
+};
+
+// Función para modificar un producto
+function modificarProducto() {
+    const id = document.getElementById('idModificar').value;
+    const nombre = document.getElementById('nombreModificar').value;
+    const precio = document.getElementById('precioModificar').value;
+    const stock = document.getElementById('stockModificar').value;
+    const categoria = document.getElementById('categoriaModificar').value;
+    const genero = document.getElementById('generoModificar').value;
+    const imagen = document.getElementById('imagenModificar').value;
+
+    const data = {
+        nombre: nombre,
+        precio: precio,
+        stock: stock,
+        categoria: categoria,
+        genero: genero,
+        imagen: imagen
     };
 
-    // Función para modificar un producto
-    window.modificarProducto = function () {
-        const id = document.getElementById('idModificar').value;
-        const nombre = document.getElementById('nombreModificar').value;
-        const precio = document.getElementById('precioModificar').value;
-        const stock = document.getElementById('stockModificar').value;
-        const categoria = document.getElementById('categoriaModificar').value;
-        const genero = document.getElementById('generoModificar').value;
-        const imagen = document.getElementById('imagenModificar').value;
-
-        const data = {
-            nombre: nombre,
-            precio: precio,
-            stock: stock,
-            categoria: categoria,
-            genero: genero,
-            imagen: imagen
-        };
-
-        fetch(`https://tiendakappacode.pythonanywhere.com/productos/${id}`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
+    fetch(`https://tiendakappacode.pythonanywhere.com/productos/${id}`, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
         .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                alert('Producto modificado con éxito');
-                // Limpiar el formulario
-                document.getElementById('formModificarProducto').reset();
-            } else {
-                alert(data.message);
-            }
+        .then(() => {
+            alert('Producto modificado con éxito');
         })
         .catch(error => {
             alert("Ocurrió un error al modificar el producto.");
             console.error('Error:', error);
         });
-    };
+};
 
-    // Función para buscar un producto para eliminar
-    window.buscarProductoEliminar = function () {
-        const id = document.getElementById('idEliminar').value;
+// Función para buscar un producto para eliminar
+function buscarProductoEliminar() {
+    const id = document.getElementById('idEliminar').value;
 
-        fetch(`https://tiendakappacode.pythonanywhere.com/productos/${id}`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
+    fetch(`https://tiendakappacode.pythonanywhere.com/productos/${id}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
         .then(response => response.json())
         .then(data => {
             if (data) {
@@ -149,18 +147,18 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Ocurrió un error al buscar el producto.");
             console.error('Error:', error);
         });
-    };
+};
 
-    // Función para eliminar un producto
-    window.borrarProducto = function () {
-        const id = document.getElementById('idEliminar').value;
+// Función para eliminar un producto
+function borrarProducto() {
+    const id = document.getElementById('idEliminar').value;
 
-        fetch(`https://tiendakappacode.pythonanywhere.com/productos/${id}`, {
-            method: 'DELETE',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
+    fetch(`https://tiendakappacode.pythonanywhere.com/productos/${id}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
         .then(response => response.json())
         .then(data => {
             if (data.success) {
@@ -175,11 +173,11 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Ocurrió un error al eliminar el producto.");
             console.error('Error:', error);
         });
-    };
+};
 
- 
-    window.openTab = openTab;
-});
+
+
+
 // funcion listar productos
 function listarProductos() {
     fetch('https://tiendakappacode.pythonanywhere.com/productos', {
@@ -188,22 +186,22 @@ function listarProductos() {
             'Content-Type': 'application/json'
         }
     })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    })
-    .then(data => {
-        const tablaProductos = document.getElementById('tablaProductos');
-        const listaProductosBody = document.getElementById('listaProductos');
-        listaProductosBody.innerHTML = ''; // Limpiar lista existente
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            const tablaProductos = document.getElementById('tablaProductos');
+            const listaProductosBody = document.getElementById('listaProductos');
+            listaProductosBody.innerHTML = ''; // Limpiar lista existente
 
-        data.forEach(producto => {
-            const filaProducto = document.createElement('tr');
+            data.forEach(producto => {
+                const filaProducto = document.createElement('tr');
 
-            // Crear celdas de tabla con los datos del producto
-            filaProducto.innerHTML = `
+                // Crear celdas de tabla con los datos del producto
+                filaProducto.innerHTML = `
                 <td>${producto.id}</td>
                 <td>${producto.nombre}</td>
                 <td>$${producto.precio}</td>
@@ -212,12 +210,12 @@ function listarProductos() {
                 <td>${producto.genero}</td>
                 <td><img src="${producto.imagen}" width="50" height="70" class="producto-imagen"></td>
             `;
-            
-            listaProductosBody.appendChild(filaProducto);
+
+                listaProductosBody.appendChild(filaProducto);
+            });
+        })
+        .catch(error => {
+            alert("Ocurrió un error al listar los productos.");
+            console.error('Error:', error);
         });
-    })
-    .catch(error => {
-        alert("Ocurrió un error al listar los productos.");
-        console.error('Error:', error);
-    });
 }

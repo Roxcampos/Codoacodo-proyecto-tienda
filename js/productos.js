@@ -317,19 +317,20 @@ function mostrar(genero, categoria, precio) {
 
             let cade = '';
             data.forEach(producto => {
-                if (producto.stock > 0){
-                if (sessionStorage.getItem('precio') == 0 || producto.precio <= sessionStorage.getItem('precio')) {
-                    if (sessionStorage.genero != "all") {
-                        if ((sessionStorage.genero == producto.genero) && ((sessionStorage.categoria == "all") || sessionStorage.categoria == producto.categoria)) {
-                            cade += crearProductoHTML(producto);
-                        }
-                    } else {
-                        if ((sessionStorage.categoria == "all") || (sessionStorage.categoria == producto.categoria)) {
-                            cade += crearProductoHTML(producto);
+                if (producto.stock > 0) {
+                    if (sessionStorage.getItem('precio') == 0 || producto.precio <= sessionStorage.getItem('precio')) {
+                        if (sessionStorage.genero != "all") {
+                            if ((sessionStorage.genero == producto.genero) && ((sessionStorage.categoria == "all") || sessionStorage.categoria == producto.categoria)) {
+                                cade += crearProductoHTML(producto);
+                            }
+                        } else {
+                            if ((sessionStorage.categoria == "all") || (sessionStorage.categoria == producto.categoria)) {
+                                cade += crearProductoHTML(producto);
+                            }
                         }
                     }
-                }}
-                else{
+                }
+                else {
                     cade += crearProductoHTMLSinStock(producto);
                 }
             });
@@ -413,7 +414,7 @@ function actualizarCantidadProductos() {
         console.error('No se encontró el span con id "cantidad-productos-carrito"');
     }
 }
-
+let carritoTotal = 0;
 // Función para actualizar el carrito
 function actualizarCarrito() {
     const carritoBody = document.querySelector("#carrito-body");
@@ -457,7 +458,7 @@ function actualizarCarrito() {
         <td class="border-bottom-right">$${totalCarrito.toFixed(2)}</td>
     </tr>
     `;
-
+    carritoTotal = totalCarrito;
     document.querySelectorAll('.cantidad-btn').forEach(button => {
         button.addEventListener('click', event => {
             const productId = button.getAttribute('data-id');
@@ -517,57 +518,101 @@ document.getElementById('continuar-comprando').addEventListener('click', functio
     window.location.href = 'productos.html';
 });
 
-//uncion para descontar el stock cuando finalice la compra e inicie el pago
+/*
+//funcion para descontar el stock cuando finalice la compra e inicie el pago
 document.getElementById('iniciar-pago').addEventListener('click', function() {
     finalizarCompra();
 });
-
+*/
 function finalizarCompra() {
-    carrito.forEach(item => {
-        const productId = item.id;
-        const cantidad = item.cantidad;
 
-        // Obtener el producto del servidor antes de actualizarlo
-        fetch(`https://tiendakappacode.pythonanywhere.com/productos/${productId}`)
-            .then(response => response.json())
-            .then(producto => {
-                if (producto.stock < cantidad) {
-                    alert(`No hay suficiente stock para el producto ${producto.nombre}`);
-                    return;
-                }else{
-                producto.stock -= cantidad; // Descontar la cantidad del stock
-                // Actualizar el producto con la cantidad descontada
-                fetch(`https://tiendakappacode.pythonanywhere.com/productos/${productId}`, {
-                    method: 'PUT',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(producto)
-                })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Error al actualizar el stock');
+    // Verificar que el ID del usuario esté presente
+    if (sessionStorage.getItem('log') === "true") {
+
+        carrito.forEach(item => {
+            const productId = item.id;
+            const cantidad = item.cantidad;
+
+
+            // Obtener el producto del servidor antes de actualizarlo
+            fetch(`https://tiendakappacode.pythonanywhere.com/productos/${productId}`)
+                .then(response => response.json())
+                .then(producto => {
+                    if (producto.stock < cantidad) {
+                        alert(`No hay suficiente stock para el producto ${producto.nombre}`);
+                        return;
+                    } else {
+                        // Crear objeto de compra con los datos necesarios
+                        const compraData = {
+                            id_usuario: sessionStorage.getItem('id'),
+                            id_producto: productId,
+                            cantidad: cantidad,
+                            importe_total: carritoTotal,
+                        };
+                        console.log(compraData)
+                    // Registrar la compra en el servidor
+                    fetch(`https://tiendakappacode.pythonanywhere.com/compras`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(compraData)
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Error al registrar la compra');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        console.log('Compra registrada:', data);
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+
+
+                        producto.stock -= cantidad; // Descontar la cantidad del stock
+                        // Actualizar el producto con la cantidad descontada
+                        fetch(`https://tiendakappacode.pythonanywhere.com/productos/${productId}`, {
+                            method: 'PUT',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(producto)
+                        })
+                            .then(response => {
+                                if (!response.ok) {
+                                    throw new Error('Error al actualizar el stock');
+                                }
+                                return response.json();
+                            })
+                            .then(data => {
+                                //console.log(`Stock actualizado para el producto ${productId}:`, data);
+                                console.log(carritoTotal)
+                                // Aquí podrías agregar más lógica si es necesario
+                            })
+                            .catch(error => {
+                                console.error('Error:', error);
+                            });
+                        alert('Producto modificado correctamente 2');
+
                     }
-                    return response.json();
-                })
-                .then(data => {
-                    console.log(`Stock actualizado para el producto ${productId}:`, data);
-                    // Aquí podrías agregar más lógica si es necesario
                 })
                 .catch(error => {
-                    console.error('Error:', error);
+                    console.error('Error al obtener el producto:', error);
                 });
-            alert('Producto modificado correctamente');
-    }})
-            .catch(error => {
-                console.error('Error al obtener el producto:', error);
-            });
-    });
+        });
 
-    // Después de actualizar el stock, vacía el carrito y actualiza la interfaz
-    carrito = [];
-    sessionStorage.setItem('carrito', JSON.stringify(carrito));
-    actualizarCantidadProductos();
-    actualizarCarrito();
- 
+        // Después de actualizar el stock, vacía el carrito y actualiza la interfaz
+        carrito = [];
+        sessionStorage.setItem('carrito', JSON.stringify(carrito));
+        actualizarCantidadProductos();
+        actualizarCarrito();
+
+    }
+    else {
+        alert("Parece que no estas loggeado, por favor ingresa session")
+        location.href = 'login.html';
+    }
 }
