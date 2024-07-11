@@ -1,4 +1,5 @@
-document.addEventListener("DOMContentLoaded", function () {
+function altaUsuario() {
+    document.addEventListener("DOMContentLoaded", function () {
     const formulario = document.getElementById('formulario-registro');
     const mensajeError = document.getElementById('mensajeError');
 
@@ -97,6 +98,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const re = /^(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{4,}$/;
         return re.test(contrasena);
     }
-});
+   })};
 
 
